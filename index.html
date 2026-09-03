@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VNNG Solutions - Giải pháp triển khai toàn diện</title>
+    <title>VNNG Solutions - Giải Pháp Triển Khai Toàn Diện</title>
     
     <!-- Google Tag Manager (GTM) Integration -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -19,7 +19,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'AW-18377569352');
     </script>
     <!-- End Google Ads Tag -->
@@ -37,23 +36,45 @@
                 extend: {
                     colors: {
                         vnpayBlue: '#0055A5',
+                        vnpayBlueHover: '#004080',
                         vnpayRed: '#ED1C24',
-                        vnpayDark: '#0A2540',
+                        vnpayDark: '#0B192C',
+                        vnpayCardBg: '#1E3E62',
+                        accentAmber: '#F59E0B'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
                     }
                 }
             }
         }
     </script>
+    
     <!-- FontAwesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
         @media screen and (max-width: 768px) {
             input, select, textarea { font-size: 16px !important; }
         }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
     </style>
-    <!-- Open Graph (Hiển thị khi gửi link qua Zalo, Facebook, Messenger) -->
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vnngsolutions.github.io/">
     <meta property="og:title" content="Thanh Toán VNPAY - Tăng Doanh Thu Cho Cửa Hàng & Doanh Nghiệp">
@@ -70,163 +91,170 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <!-- Top Urgent Notice Bar -->
-    <div class="bg-gradient-to-r from-vnpayRed to-orange-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-inner">
-        🔥 <span class="font-bold underline uppercase">Đơn vị chủ lực giúp VNPAY</span> phủ sóng toàn miền Bắc 2 năm đầu &amp; mở rộng toàn quốc từ 2023.
+    <div class="bg-gradient-to-r from-vnpayRed via-red-600 to-amber-600 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-md tracking-wide">
+        🔥 <span class="font-bold underline uppercase tracking-wider">Đơn vị chủ lực giúp VNPAY</span> phủ sóng toàn miền Bắc 2 năm đầu & mở rộng toàn quốc từ 2023.
     </div>
 
     <!-- Header / Navbar -->
-    <header class="bg-white sticky top-0 z-50 shadow-sm border-b border-slate-100 py-2.5">
-        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex justify-between items-center gap-2">
+    <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 shadow-sm transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3">
             
             <!-- LOGO & THƯƠNG HIỆU -->
-<div class="flex items-center space-x-2 min-w-0">
-    <img alt="Logo VNNG Solutions" src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png" class="h-9 sm:h-11 w-auto object-contain flex-shrink-0">
-    <div class="flex flex-col min-w-0">
-        <span class="font-black text-xs sm:text-base text-slate-900 tracking-tight leading-tight truncate">VNNG SOLUTIONS</span>
-        <span class="text-[9px] sm:text-xs text-slate-500 font-medium truncate">CHẠM KẾT NỐI MỌI GIÁ TRỊ</span>
-    </div>
-</div>
+            <a href="#" class="flex items-center space-x-3 group min-w-0">
+                <img alt="Logo VNNG Solutions" src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png" class="h-9 sm:h-11 w-auto object-contain flex-shrink-0 transition-transform group-hover:scale-105">
+                <div class="flex flex-col min-w-0">
+                    <span class="font-black text-sm sm:text-lg text-slate-900 tracking-tight leading-none">VNNG SOLUTIONS</span>
+                    <span class="text-[10px] sm:text-xs text-slate-500 font-bold tracking-wider uppercase mt-1">Chạm kết nối mọi giá trị</span>
+                </div>
+            </a>
 
             <!-- THÔNG TIN LIÊN HỆ & CTA -->
-            <div class="flex items-center space-x-2 sm:space-x-4 flex-shrink-0">
-                <div class="hidden md:flex items-center space-x-2 bg-slate-50 px-3.5 py-2 rounded-full border border-slate-200/80">
-                    <i class="fa-solid fa-phone text-vnpayBlue text-xs"></i>
-                    <span class="text-xs text-slate-600">Hỗ trợ 24/7: <strong class="text-vnpayBlue font-bold">0968 122 893</strong></span>
-                </div>
+            <div class="flex items-center space-x-3 sm:space-x-5 flex-shrink-0">
+                <a href="tel:0968122893" class="hidden md:flex items-center space-x-2.5 bg-slate-100 hover:bg-slate-200/80 px-4 py-2 rounded-xl border border-slate-200 transition">
+                    <div class="w-7 h-7 rounded-full bg-vnpayBlue/10 flex items-center justify-center text-vnpayBlue">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                    </div>
+                    <span class="text-xs text-slate-600">Hỗ trợ 24/7: <strong class="text-vnpayBlue font-extrabold text-sm ml-0.5">0968 122 893</strong></span>
+                </a>
 
-                <a href="#dang-ky" class="bg-vnpayBlue hover:bg-blue-700 text-white px-3 py-2 sm:px-5 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold shadow-md transition transform active:scale-95 flex items-center justify-center whitespace-nowrap">
+                <a href="#dang-ky" class="bg-vnpayBlue hover:bg-vnpayBlueHover text-white px-4 py-2.5 sm:px-6 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center justify-center space-x-2">
                     <span>Đăng Ký Ngay</span>
+                    <i class="fa-solid fa-arrow-right text-xs"></i>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden bg-gradient-to-b from-blue-900 via-vnpayBlue to-blue-800 text-white py-8 sm:py-12 lg:py-20">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-vnpayDark via-vnpayBlue to-slate-900 text-white py-12 lg:py-20">
+        <!-- Overlay Grid Pattern -->
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:20px_20px]"></div>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 
                 <!-- Left Content -->
-                <div class="lg:col-span-7 space-y-5 sm:space-y-6">
-                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full border border-white/20 text-blue-200 text-xs font-semibold uppercase tracking-wider">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 text-amber-300 text-xs font-bold uppercase tracking-wider shadow-inner">
                         <i class="fa-solid fa-shield-halved text-amber-400"></i>
                         <span>Giải pháp triển khai toàn diện</span>
                     </div>
 
-                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
-                        Mở khóa tăng trưởng cùng VNNG trên <span class="text-amber-300 underline decoration-amber-400/50 decoration-4">toàn quốc.</span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-white">
+                        Mở khóa tăng trưởng cùng VNNG trên <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-200">toàn quốc.</span>
                     </h1>
 
-                    <p class="text-blue-100 text-sm sm:text-lg leading-relaxed font-normal max-w-2xl">
-                        Chạm kết nối mọi <strong class="text-white font-bold">giá trị</strong>
+                    <p class="text-blue-100 text-base sm:text-xl leading-relaxed font-medium max-w-2xl">
+                        Chạm kết nối mọi <span class="text-white font-extrabold underline decoration-amber-400 underline-offset-4">giá trị</span>
                     </p>
 
-                    <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-base text-blue-50 font-medium pt-1">
-                        <li class="flex items-start space-x-3">
-                            <i class="fa-solid fa-circle-check text-green-400 text-base sm:text-lg mt-0.5"></i>
-                            <span>Có sẵn mạng lưới &amp; <strong class="text-white">lực lượng triển khai </strong> phủ rộng </span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <i class="fa-solid fa-circle-check text-green-400 text-base sm:text-lg mt-0.5"></i>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-blue-50 font-medium pt-2">
+                        <div class="flex items-start space-x-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-base mt-0.5"></i>
+                            <span>Mạng lưới & lực lượng triển khai phủ rộng toàn quốc</span>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-base mt-0.5"></i>
                             <span>Vận hành trọn gói, một đầu mối duy nhất</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <i class="fa-solid fa-circle-check text-green-400 text-base sm:text-lg mt-0.5"></i>
-                            <span>Đưa sản phẩm tới tận tay khách hàng nhanh & chuẩn</span>
-                        </li>
-                        <li class="flex items-start space-x-3">
-                            <i class="fa-solid fa-circle-check text-green-400 text-base sm:text-lg mt-0.5"></i>
-                            <span>Thu dữ liệu thị trường để tối ưu liên tục</span>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-base mt-0.5"></i>
+                            <span>Đưa sản phẩm tới tận tay khách hàng chuẩn xác</span>
+                        </div>
+                        <div class="flex items-start space-x-3 bg-white/5 p-3 rounded-xl border border-white/10">
+                            <i class="fa-solid fa-circle-check text-emerald-400 text-base mt-0.5"></i>
+                            <span>Thu thập dữ liệu thị trường để tối ưu liên tục</span>
+                        </div>
+                    </div>
 
                     <!-- VIDEO BOX -->
-        <div class="pt-2">
-            <div class="bg-white/10 backdrop-blur-md p-3 rounded-2xl border border-white/25 shadow-2xl max-w-lg">
-                <div class="flex items-center space-x-2 text-xs font-semibold text-blue-200 px-1 py-1 mb-2">
-                    <i class="fa-solid fa-video text-red-400 animate-pulse"></i>
-                    <span>Hướng dẫn sử dụng SmartPOS</span>
+                    <div class="pt-4">
+                        <div class="glass-card p-4 rounded-2xl shadow-2xl max-w-lg">
+                            <div class="flex items-center justify-between text-xs font-semibold text-blue-100 px-1 mb-2.5">
+                                <span class="flex items-center space-x-2">
+                                    <i class="fa-solid fa-circle-play text-red-500 text-sm animate-pulse"></i>
+                                    <span class="font-bold">Hướng dẫn sử dụng SmartPOS</span>
+                                </span>
+                                <span class="text-[10px] bg-red-500/20 text-red-300 px-2 py-0.5 rounded border border-red-500/30 font-bold">HD Trực Quan</span>
+                            </div>
+                            <div class="aspect-[16/9] w-full overflow-hidden rounded-xl shadow-inner bg-black/80">
+                                <video controls loop playsinline preload="auto" class="w-full h-full object-cover">
+                                    <source src="https://github.com/vnngsolutions/vnngsolutions.github.io/raw/main/smartposvideo.webm" type="video/webm">
+                                    Trình duyệt của bạn không hỗ trợ video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="aspect-[16/9] w-full overflow-hidden rounded-xl shadow-inner bg-black">
-                    <video controls loop playsinline preload="auto" class="w-full h-full object-cover">
-                        <source src="https://github.com/vnngsolutions/vnngsolutions.github.io/raw/main/smartposvideo.webm" type="video/webm">
-                        Trình duyệt của bạn không hỗ trợ video.
-                    </video>
-                </div>
-            </div>
-        </div>
-    </div>
+
                 <!-- Right Form -->
                 <div class="lg:col-span-5" id="dang-ky">
-                    <div class="bg-white text-slate-800 rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 border border-slate-100 relative overflow-hidden">
+                    <div class="bg-white text-slate-800 rounded-3xl shadow-2xl p-6 sm:p-8 border border-slate-100 relative overflow-hidden">
                         
-                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-amber-600 text-white text-[10px] sm:text-[11px] font-bold px-3 py-1 sm:px-4 rounded-bl-xl uppercase tracking-wider shadow">
-                            Miễn Phí Tư Vấn
+                        <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-amber-600 text-white text-[11px] font-extrabold px-4 py-1.5 rounded-bl-xl uppercase tracking-wider shadow-md">
+                            ★ Miễn Phí Tư Vấn
                         </div>
 
-                        <div class="mb-5 sm:mb-6">
-                            <h2 class="text-xl sm:text-2xl font-bold text-slate-900">Đăng Ký Tư Vấn Nhanh</h2>
-                            <p class="text-slate-500 text-xs sm:text-sm mt-1">Điền thông tin bên dưới, chuyên viên sẽ liên hệ lại trong vòng <strong class="text-vnpayBlue">10 phút</strong>.</p>
+                        <div class="mb-6">
+                            <h2 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Đăng Ký Tư Vấn Nhanh</h2>
+                            <p class="text-slate-500 text-xs sm:text-sm mt-1">Điền thông tin, chuyên viên sẽ liên hệ lại trong vòng <strong class="text-vnpayBlue font-bold">10 phút</strong>.</p>
                         </div>
 
                         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){showSuccess();}"></iframe>
 
-                        <form id="consultationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd9k4BFTZW10Md4D2UeMlTO65Bf-YVxCMvTPyZNZkoFDpu6mw/formResponse" method="POST" target="hidden_iframe" onsubmit="handleFormSubmit(event)" class="space-y-4 sm:space-y-5">
-    <div>
-        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Họ và tên người liên hệ <span class="text-red-500">*</span></label>
-        <div class="relative">
-            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400"><i class="fa-solid fa-user"></i></span>
-            <input type="text" id="cusName" name="entry.1444757328" autocomplete="name" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-vnpayBlue focus:bg-white transition">
-        </div>
-    </div>
+                        <form id="consultationForm" action="https://docs.google.com/forms/d/e/1FAIpQLSd9k4BFTZW10Md4D2UeMlTO65Bf-YVxCMvTPyZNZkoFDpu6mw/formResponse" method="POST" target="hidden_iframe" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Họ và tên người liên hệ <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-user text-sm"></i></span>
+                                    <input type="text" id="cusName" name="entry.1444757328" autocomplete="name" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-vnpayBlue focus:bg-white transition">
+                                </div>
+                            </div>
 
-    <div>
-        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Số điện thoại liên hệ (Zalo) <span class="text-red-500">*</span></label>
-        <div class="relative">
-            <span class="absolute inset-y-0 left-0 pl-3 flex items-center text-slate-400"><i class="fa-solid fa-phone"></i></span>
-            <input type="tel" id="cusPhone" name="entry.1967364401" autocomplete="tel" required placeholder="Ví dụ: 0912345678" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-vnpayBlue focus:bg-white transition">
-        </div>
-    </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Số điện thoại liên hệ (Zalo) <span class="text-red-500">*</span></label>
+                                <div class="relative">
+                                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400"><i class="fa-solid fa-phone text-sm"></i></span>
+                                    <input type="tel" id="cusPhone" name="entry.1967364401" autocomplete="tel" required placeholder="Ví dụ: 0912345678" class="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:ring-2 focus:ring-vnpayBlue focus:bg-white transition">
+                                </div>
+                            </div>
 
-    <!-- Hidden inputs -->
-    <input type="hidden" name="entry.14513303" value="Đăng ký tư vấn nhanh qua Form rút gọn">
+                            <input type="hidden" name="entry.14513303" value="Đăng ký tư vấn nhanh qua Form rút gọn">
 
-    <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-3 text-xs text-slate-600 space-y-1">
-        <div class="font-bold text-vnpayBlue flex items-center space-x-1.5">
-            <i class="fa-solid fa-gift text-amber-500"></i>
-            <span>Quyền lợi khi đăng ký ngay hôm nay:</span>
-        </div>
-        <p>✓ Tư vấn giải pháp tối ưu doanh thu &amp; chi phí</p>
-        <p>✓ Cầu nối đưa giải pháp công nghệ của bạn thống lĩnh thị trường</p>
-    </div>
+                            <div class="bg-blue-50/80 border border-blue-100 rounded-xl p-3.5 text-xs text-slate-600 space-y-1.5">
+                                <div class="font-bold text-vnpayBlue flex items-center space-x-1.5 text-xs uppercase tracking-wider">
+                                    <i class="fa-solid fa-gift text-amber-500 text-sm"></i>
+                                    <span>Quyền lợi khi đăng ký hôm nay:</span>
+                                </div>
+                                <p class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Tư vấn giải pháp tối ưu doanh thu & chi phí</span></p>
+                                <p class="flex items-center space-x-2"><i class="fa-solid fa-check text-emerald-600"></i> <span>Cầu nối đưa giải pháp công nghệ thống lĩnh thị trường</span></p>
+                            </div>
 
-    <button type="submit" class="w-full bg-gradient-to-r from-vnpayBlue to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg hover:shadow-xl transition transform active:scale-[0.99] flex items-center justify-center space-x-2">
-        <span>ĐĂNG KÝ TƯ VẤN NGAY</span>
-        <i class="fa-solid fa-arrow-right"></i>
-    </button>
-</form>
+                            <button type="submit" class="w-full bg-gradient-to-r from-vnpayBlue to-blue-700 hover:from-vnpayBlueHover hover:to-vnpayBlue text-white font-extrabold py-3.5 px-4 rounded-xl shadow-lg hover:shadow-xl transition transform active:scale-[0.98] flex items-center justify-center space-x-2 tracking-wide">
+                                <span>ĐĂNG KÝ TƯ VẤN NGAY</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
 
                         <div id="successMessage" class="hidden text-center py-8 space-y-4">
-                            <div class="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto text-2xl shadow-inner">
+                            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl shadow-inner">
                                 <i class="fa-solid fa-check"></i>
                             </div>
                             <h3 class="text-xl font-bold text-slate-900">Đăng ký thành công!</h3>
-                            <p class="text-slate-600 text-sm max-w-xs mx-auto">
-                                Cảm ơn <strong id="displayName" class="text-vnpayBlue"></strong> đã đăng ký. Chuyên viên VNPAY sẽ liên hệ hỗ trợ bạn qua số điện thoại <strong id="displayPhone"></strong> trong ít phút tới.
+                            <p class="text-slate-600 text-sm max-w-xs mx-auto leading-relaxed">
+                                Cảm ơn <strong id="displayName" class="text-vnpayBlue"></strong> đã gửi thông tin. Chuyên viên VNPAY sẽ liên hệ hỗ trợ bạn qua số điện thoại <strong id="displayPhone"></strong> trong ít phút tới.
                             </p>
-                            <button onclick="resetForm()" class="text-sm text-vnpayBlue font-bold underline hover:text-blue-800">Đăng ký yêu cầu khác</button>
+                            <button onclick="resetForm()" class="text-sm text-vnpayBlue font-bold underline hover:text-vnpayBlueHover transition">Đăng ký yêu cầu khác</button>
                         </div>
 
-                        <div class="mt-5 pt-4 border-t border-slate-100 flex items-center space-x-3">
+                        <div class="mt-6 pt-4 border-t border-slate-100 flex items-center space-x-3">
                             <div class="relative">
-                                <img src="https://thanhtoanvnpay.github.io/100kb.jpg" alt="Chuyên viên" class="w-10 h-10 rounded-full object-cover border-2 border-vnpayBlue shadow">
-                                <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                                <img src="https://thanhtoanvnpay.github.io/100kb.jpg" alt="Chuyên viên" class="w-11 h-11 rounded-full object-cover border-2 border-vnpayBlue shadow">
+                                <span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-white rounded-full"></span>
                             </div>
                             <div>
-                                <h4 class="text-xs font-bold text-slate-900">Hỗ trợ trực tiếp 24/7</h4>
-                                <p class="text-[11px] text-slate-500">Hotline/Zalo: <a href="https://zalo.me/0968122893" target="_blank" class="text-vnpayBlue font-bold hover:underline">0968.122.893</a></p>
+                                <h4 class="text-xs font-bold text-slate-900 uppercase">Hỗ trợ trực tiếp 24/7</h4>
+                                <p class="text-xs text-slate-500">Hotline/Zalo: <a href="https://zalo.me/0968122893" target="_blank" class="text-vnpayBlue font-extrabold hover:underline">0968.122.893</a></p>
                             </div>
                         </div>
 
@@ -237,163 +265,161 @@
         </div>
 
         <!-- Quick Stats -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10 sm:mt-16">
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 bg-white/10 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/20 text-center">
-                <div>
-                    <div class="text-2xl sm:text-4xl font-extrabold text-amber-300">40+</div>
-                    <div class="text-xs sm:text-sm text-blue-100 uppercase tracking-wider mt-1">Ngân hàng liên kết</div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 glass-card rounded-2xl p-6 text-center">
+                <div class="space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-amber-300 tracking-tight">40+</div>
+                    <div class="text-xs sm:text-sm text-blue-100 font-semibold uppercase tracking-wider">Ngân hàng liên kết</div>
                 </div>
-                <div class="border-t sm:border-t-0 sm:border-l border-white/20 pt-3 sm:pt-0">
-                    <div class="text-2xl sm:text-4xl font-extrabold text-amber-300">30M+</div>
-                    <div class="text-xs sm:text-sm text-blue-100 uppercase tracking-wider mt-1">Người dùng App Ngân hàng</div>
+                <div class="border-t sm:border-t-0 sm:border-l border-white/15 pt-4 sm:pt-0 space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-amber-300 tracking-tight">30M+</div>
+                    <div class="text-xs sm:text-sm text-blue-100 font-semibold uppercase tracking-wider">Người dùng App Ngân hàng</div>
                 </div>
-                <div class="border-t sm:border-t-0 sm:border-l border-white/20 pt-3 sm:pt-0">
-                    <div class="text-2xl sm:text-4xl font-extrabold text-amber-300">24/7</div>
-                    <div class="text-xs sm:text-sm text-blue-100 uppercase tracking-wider mt-1">Hỗ trợ kỹ thuật &amp; Đối soát</div>
+                <div class="border-t sm:border-t-0 sm:border-l border-white/15 pt-4 sm:pt-0 space-y-1">
+                    <div class="text-3xl sm:text-4xl font-black text-amber-300 tracking-tight">24/7</div>
+                    <div class="text-xs sm:text-sm text-blue-100 font-semibold uppercase tracking-wider">Hỗ trợ kỹ thuật & Đối soát</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Ha tang va quan ly van hanh -->
-<section class="py-6 sm:py-10 bg-white border-b border-slate-100 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
-        <p class="text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 sm:mb-6">
-            Hạ tầng & quản lý vận hành
-        </p>
-        <div class="flex justify-center items-center w-full py-1">
-            <img 
-                src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/vnng 1.png" 
-                alt="Hạ tầng và quản lý vận hành" 
-                class="w-[125%] max-w-none sm:w-full sm:max-w-5xl h-auto object-contain transition-all duration-300"
-            >
+    <!-- Hạ Tầng và Quản Lý Vận Hành -->
+    <section class="py-12 bg-white border-b border-slate-200/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Cơ Sở Hạ Tầng</span>
+            <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-2 mb-6">Hạ Tầng & Quản Lý Vận Hành</h2>
+            <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3 sm:p-6 shadow-sm">
+                <img 
+                    src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/vnng 1.png" 
+                    alt="Hạ tầng và quản lý vận hành" 
+                    class="w-full max-w-5xl h-auto mx-auto object-contain transition-transform duration-300 hover:scale-[1.01]"
+                >
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Problem Solving -->
-    <section class="py-12 sm:py-20 bg-slate-50">
+    <section class="py-14 sm:py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3">
-                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">Giải Quyết Bài Toán Triển Khai</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900">Tại sao doanh nghiệp của bạn cần tới giải pháp của VNNG</h2>
-                <p class="text-slate-600 text-xs sm:text-base">Cần một đơn vị triển khai chuyên nghiệp — đảm nhận trọn khâu đưa giải pháp ra thị trường.</p>
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3.5 py-1.5 rounded-full">Giải Quyết Bài Toán Triển Khai</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Tại sao doanh nghiệp của bạn cần tới giải pháp của VNNG?</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Chúng tôi cung cấp giải pháp trọn gói chuyên nghiệp — đảm nhận hoàn toàn khâu đưa giải pháp ra thị trường.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-12">
-                <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-100 space-y-3 sm:space-y-4 group">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 text-vnpayRed rounded-2xl flex items-center justify-center text-xl sm:text-2xl group-hover:bg-vnpayRed group-hover:text-white transition">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 space-y-4 group hover:-translate-y-1">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-red-50 text-vnpayRed rounded-2xl flex items-center justify-center text-xl sm:text-2xl group-hover:bg-vnpayRed group-hover:text-white transition-colors duration-300 shadow-sm">
                         <i class="fa-solid fa-wallet"></i>
                     </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Khó chạm thị trường</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Giải pháp tốt nhưng chưa tiếp cận hiệu quả điểm bán & người dùng cuối.</p>
+                    <h3 class="text-lg font-bold text-slate-900">Khó tiếp cận thị trường</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Sản phẩm/Giải pháp tốt nhưng gặp trở ngại khi tiếp cận hiệu quả điểm bán & người dùng cuối trên quy mô rộng.</p>
                 </div>
 
-                <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-100 space-y-3 sm:space-y-4 group">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl sm:text-2xl group-hover:bg-vnpayBlue group-hover:text-white transition">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 space-y-4 group hover:-translate-y-1">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-blue-50 text-vnpayBlue rounded-2xl flex items-center justify-center text-xl sm:text-2xl group-hover:bg-vnpayBlue group-hover:text-white transition-colors duration-300 shadow-sm">
                         <i class="fa-solid fa-scale-balanced"></i>
                     </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Chi phí mở rộng lớn</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Tự xây lực lượng bán, triển khai & vận hành toàn quốc rất tốn kém.</p>
+                    <h3 class="text-lg font-bold text-slate-900">Chi phí mở rộng lớn</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Việc tự đầu tư xây dựng lực lượng bán hàng, triển khai & vận hành toàn quốc vô cùng tốn kém và mất thời gian.</p>
                 </div>
 
-                <div class="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-xl transition border border-slate-100 space-y-3 sm:space-y-4 group">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl sm:text-2xl group-hover:bg-amber-500 group-hover:text-white transition">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200/80 space-y-4 group hover:-translate-y-1">
+                    <div class="w-12 h-12 sm:w-14 sm:h-14 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center text-xl sm:text-2xl group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300 shadow-sm">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
-                    <h3 class="text-base sm:text-lg font-bold text-slate-900">Vận hành thiếu đồng bộ, thiếu dữ liệu tối ưu</h3>
-                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Triển khai – đào tạo – vận hành – chăm sóc thiếu một đầu mối xuyên suốt / Không có dữ liệu & phản hồi thực địa để cải tiến sản phẩm, tăng trưởng.</p>
+                    <h3 class="text-lg font-bold text-slate-900">Vận hành thiếu đồng bộ</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Thiếu một đầu mối chuyên nghiệp xuyên suốt từ Triển khai – Đào tạo – Vận hành – Chăm sóc khách hàng và phản hồi dữ liệu thực địa.</p>
                 </div>
             </div>
 
-            <!-- Luong phoi hop -->
-<section class="py-6 sm:py-10 bg-white border-b border-slate-100 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-center">
-        <p class="text-[11px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest mb-3 sm:mb-6">
-            Luồng phối hợp
-        </p>
-        <div class="flex justify-center items-center w-full py-1">
-            <img 
-                src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/vnng2.png" 
-                alt="Luồng phối hợp" 
-                class="w-[125%] max-w-none sm:w-full sm:max-w-5xl h-auto object-contain transition-all duration-300"
-            >
-        </div>
-    </div>
-</section>
+            <!-- Luồng phối hợp -->
+            <div class="bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-sm mb-10 text-center">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-100">Quy Trình Chuẩn Hóa</span>
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 mt-2 mb-6">Luồng Phối Hợp Triển Khai</h3>
+                <img 
+                    src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/vnng2.png" 
+                    alt="Luồng phối hợp" 
+                    class="w-full max-w-5xl h-auto mx-auto object-contain transition-transform duration-300 hover:scale-[1.01]"
+                >
+            </div>
 
-            <!-- Nút kêu gọi hành động (CTA Button) -->
+            <!-- CTA Button -->
             <div class="text-center">
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-bold text-white bg-vnpayBlue hover:bg-blue-700 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
-                    <span>Đăng Ký Giải Pháp Ngay</span>
-                    <i class="fa-solid fa-arrow-right ml-2"></i>
+                <a href="#dang-ky" class="inline-flex items-center justify-center px-8 py-4 text-sm sm:text-base font-extrabold text-white bg-vnpayBlue hover:bg-vnpayBlueHover rounded-2xl shadow-xl hover:shadow-2xl transition transform hover:-translate-y-0.5 space-x-2">
+                    <span>ĐĂNG KÝ GIẢI PHÁP NGAY</span>
+                    <i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="py-12 sm:py-20 bg-white">
+    <section class="py-14 sm:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-3">
-                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">Năng Lực Triển Khai</span>
-                <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900">Cam kết của VNNG:</h2>
-                <p class="text-slate-600 text-xs sm:text-base">Đưa giải pháp của đối tác ra thị trường — nhanh, đúng và bền vững.</p>
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3.5 py-1.5 rounded-full">Năng Lực Triển Khai</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Cam kết của VNNG Solutions</h2>
+                <p class="text-slate-600 text-sm sm:text-base">Đưa giải pháp của đối tác ra thị trường — Nhanh chóng, Chính xác và Bền vững.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue transition group">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue hover:shadow-lg transition duration-300 group">
                     <div class="space-y-4">
-                        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-base shadow">01</div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Phủ sóng thị trường</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Mạng lưới 4 vùng - 9 khu vực trải khắp 34 tỉnh/thành, chi nhánh & phòng giao dịch khắp ba miền — đưa giải pháp chạm đúng điểm bán và người dùng cuối mà đối tác không phải tự mở rộng.</p>
+                        <div class="w-10 h-10 bg-vnpayBlue text-white rounded-xl flex items-center justify-center font-black text-sm shadow">01</div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Phủ sóng thị trường</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Mạng lưới 4 vùng - 9 khu vực trải khắp 34 tỉnh/thành, chi nhánh & phòng giao dịch khắp ba miền — tiếp cận đúng điểm bán và người dùng cuối.</p>
                     </div>
-                    <div class="pt-4 sm:pt-6 mt-4 border-t border-slate-200">
-                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1 group-hover:translate-x-1 transition">
+                    <div class="pt-6 mt-4 border-t border-slate-200/80">
+                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1.5 group-hover:translate-x-1 transition">
                             <span>Đăng ký ngay</span>
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue transition group">
+                <!-- Card 2 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue hover:shadow-lg transition duration-300 group">
                     <div class="space-y-4">
-                        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-base shadow">02</div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Triển khai quy mô lớn</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">300+ nhân sự triển khai trực tiếp tại địa bàn, sẵn sàng chạy các chiến dịch mở rộng đồng loạt, nhanh và chuẩn hóa trên phạm vi toàn quốc.</p>
+                        <div class="w-10 h-10 bg-vnpayBlue text-white rounded-xl flex items-center justify-center font-black text-sm shadow">02</div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Triển khai quy mô lớn</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Hơn 300+ nhân sự triển khai trực tiếp tại địa bàn, sẵn sàng kích hoạt các chiến dịch mở rộng đồng loạt, chuẩn hóa toàn quốc.</p>
                     </div>
-                    <div class="pt-4 sm:pt-6 mt-4 border-t border-slate-200">
-                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1 group-hover:translate-x-1 transition">
+                    <div class="pt-6 mt-4 border-t border-slate-200/80">
+                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1.5 group-hover:translate-x-1 transition">
                             <span>Đăng ký ngay</span>
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue transition group">
+                <!-- Card 3 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue hover:shadow-lg transition duration-300 group">
                     <div class="space-y-4">
-                        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-base shadow">03</div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Go-to-Market trọn gói</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Một đầu mối xuyên suốt: phát triển KH → triển khai → đào tạo → vận hành → CSKH → đối soát, giúp đối tác giảm chi phí quản lý và rút ngắn thời gian ra thị trường.</p>
+                        <div class="w-10 h-10 bg-vnpayBlue text-white rounded-xl flex items-center justify-center font-black text-sm shadow">03</div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Go-to-Market trọn gói</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Một đầu mối duy nhất: Phát triển KH → Triển khai → Đào tạo → Vận hành → CSKH → Đối soát, tiết kiệm tối đa thời gian & chi phí.</p>
                     </div>
-                    <div class="pt-4 sm:pt-6 mt-4 border-t border-slate-200">
-                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1 group-hover:translate-x-1 transition">
+                    <div class="pt-6 mt-4 border-t border-slate-200/80">
+                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1.5 group-hover:translate-x-1 transition">
                             <span>Đăng ký ngay</span>
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="bg-slate-50 border border-slate-200/80 rounded-2xl sm:rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue transition group">
+                <!-- Card 4 -->
+                <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-6 flex flex-col justify-between hover:border-vnpayBlue hover:shadow-lg transition duration-300 group">
                     <div class="space-y-4">
-                        <div class="w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-bold text-base shadow">04</div>
-                        <h3 class="text-base sm:text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Vận hành & dữ liệu</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Đội ngũ chăm sóc giữ chân merchan/KH  (giữ tỷ lệ churn thấp) và thu thập dữ liệu thực địa, phản hồi thị trường để đối tác liên tục tối ưu sản phẩm/dịch vụ và tăng trưởng bền vững.</p>
+                        <div class="w-10 h-10 bg-vnpayBlue text-white rounded-xl flex items-center justify-center font-black text-sm shadow">04</div>
+                        <h3 class="text-lg font-bold text-slate-900 group-hover:text-vnpayBlue transition">Vận hành & dữ liệu</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">Chăm sóc giữ chân điểm bán (giảm tỷ lệ churn) và thu thập dữ liệu thực địa để liên tục tối ưu sản phẩm, tăng trưởng bền vững.</p>
                     </div>
-                    <div class="pt-4 sm:pt-6 mt-4 border-t border-slate-200">
-                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1 group-hover:translate-x-1 transition">
-                            <span>Đăng ký ngayn</span>
-                            <i class="fa-solid fa-arrow-right"></i>
+                    <div class="pt-6 mt-4 border-t border-slate-200/80">
+                        <a href="#dang-ky" class="text-vnpayBlue text-xs sm:text-sm font-bold flex items-center space-x-1.5 group-hover:translate-x-1 transition">
+                            <span>Đăng ký ngay</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
                         </a>
                     </div>
                 </div>
@@ -401,46 +427,52 @@
         </div>
     </section>
 
-    <!-- Service Section -->
-    <section class="py-12 sm:py-20 bg-slate-50 border-t border-slate-200/60">
+    <!-- Multi-industry Service Section -->
+    <section class="py-14 sm:py-20 bg-slate-50 border-t border-slate-200/80">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10 sm:mb-16 space-y-2 sm:space-y-3">
-                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-full">Dịch Vụ Đa Ngành</span>
-                <p class="text-slate-600 text-xs sm:text-base">Và tiếp tục mở rộng:  Tài chính – Ngân hàng · Bảo hiểm số · Viễn thông · Logistics · IoT ...</p>
+            <div class="text-center mb-12 space-y-3">
+                <span class="text-xs font-bold text-vnpayBlue uppercase tracking-widest bg-blue-100 px-3.5 py-1.5 rounded-full">Dịch Vụ Đa Ngành</span>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Hệ Sinh Thái Mở Rộng</h2>
+                <p class="text-slate-600 text-xs sm:text-sm">Tài chính – Ngân hàng · Bảo hiểm số · Viễn thông · Logistics · IoT ...</p>
             </div>
 
-            <div class="space-y-3 sm:space-y-4">
-                <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
-                    <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between">
-                        <span><i class="fa-solid fa-exclamation-circle text-vnpayBlue mr-2"></i> THANH TOÁN & CHUYỂN ĐỔI SỐ</span>
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-vnpayBlue/50 transition">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+                        <i class="fa-solid fa-credit-card text-vnpayBlue"></i>
+                        <span>THANH TOÁN & CHUYỂN ĐỔI SỐ</span>
                     </h3>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-2 sm:mt-3 pl-6 leading-relaxed">
+                    <p class="text-slate-600 text-xs sm:text-sm mt-3 pl-6 leading-relaxed">
                         Phát triển & mở điểm chấp nhận thanh toán; lắp đặt QR · SmartPOS · PhonePOS · Soundbox; onboarding merchant; triển khai hóa đơn điện tử · chữ ký số · POS365; đào tạo, chăm sóc & đối soát. (VNPAY)
                     </p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
-                    <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between">
-                        <span><i class="fa-solid fa-exclamation-circle text-vnpayBlue mr-2"></i> KẾ TOÁN – KÊ KHAI THUẾ (Hộ KD)</span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-vnpayBlue/50 transition">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+                        <i class="fa-solid fa-file-invoice-dollar text-vnpayBlue"></i>
+                        <span>KẾ TOÁN – KÊ KHAI THUẾ (Hộ KD)</span>
                     </h3>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-2 sm:mt-3 pl-6 leading-relaxed">
+                    <p class="text-slate-600 text-xs sm:text-sm mt-3 pl-6 leading-relaxed">
                         Làm cầu nối đưa dịch vụ kế toán – đại lý thuế đến hộ kinh doanh & DN nhỏ; tư vấn, đăng ký & triển khai phần mềm kế toán – kê khai; hỗ trợ lập, nộp báo cáo & thuế điện tử. (Kế toán/ đại lý thuế)
                     </p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
-                    <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between">
-                        <span><i class="fa-solid fa-exclamation-circle text-vnpayBlue mr-2"></i> TRẠM SẠC XE ĐIỆN</span>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-vnpayBlue/50 transition">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+                        <i class="fa-solid fa-charging-station text-vnpayBlue"></i>
+                        <span>TRẠM SẠC XE ĐIỆN</span>
                     </h3>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-2 sm:mt-3 pl-6 leading-relaxed">
+                    <p class="text-slate-600 text-xs sm:text-sm mt-3 pl-6 leading-relaxed">
                         Khảo sát & phát triển điểm đặt (điểm bán · chung cư · TTTM); lắp đặt, vận hành và mở rộng mạng lưới điểm sạc — giành thị phần cho đối tác; quản lý hợp đồng & chia sẻ doanh thu. (Đối tác năng lượng)
                     </p>
                 </div>
-                 <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-slate-200">
-                    <h3 class="font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between">
-                        <span><i class="fa-solid fa-exclamation-circle text-vnpayBlue mr-2"></i> BÁN LẺ & MỞ RỘNG KÊNH</span>
+
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200/80 hover:border-vnpayBlue/50 transition">
+                    <h3 class="font-bold text-slate-900 text-base flex items-center space-x-2">
+                        <i class="fa-solid fa-store text-vnpayBlue"></i>
+                        <span>BÁN LẺ & MỞ RỘNG KÊNH</span>
                     </h3>
-                    <p class="text-slate-600 text-xs sm:text-sm mt-2 sm:mt-3 pl-6 leading-relaxed">
+                    <p class="text-slate-600 text-xs sm:text-sm mt-3 pl-6 leading-relaxed">
                         Phát triển nhà bán/điểm bán mới; mở rộng mạng lưới phân phối & kênh bán lẻ cho đối tác; trưng bày, trade-marketing và chăm sóc điểm bán, tăng độ phủ thị trường. (VnShop & kênh bán lẻ)
                     </p>
                 </div>
@@ -449,14 +481,14 @@
     </section>
 
     <!-- Bottom CTA Banner -->
-    <section class="py-12 sm:py-20 bg-gradient-to-r from-blue-900 via-vnpayBlue to-blue-800 text-white text-center relative overflow-hidden">
+    <section class="py-14 sm:py-20 bg-gradient-to-r from-vnpayDark via-vnpayBlue to-slate-900 text-white text-center relative overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-4 sm:space-y-6">
-            <h2 class="text-2xl sm:text-4xl font-extrabold">Sẵn sàng tối ưu doanh thu ngay hôm nay?</h2>
-            <p class="text-blue-100 text-xs sm:text-lg max-w-2xl mx-auto">Để lại thông tin, chuyên viên tư vấn sẽ liên hệ hỗ trợ bạn hoàn toàn miễn phí trong thời gian sớm nhất.</p>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6">
+            <h2 class="text-2xl sm:text-4xl font-black tracking-tight">Sẵn sàng tối ưu doanh thu ngay hôm nay?</h2>
+            <p class="text-blue-100 text-sm sm:text-lg max-w-2xl mx-auto font-medium">Để lại thông tin, chuyên viên tư vấn sẽ liên hệ hỗ trợ bạn hoàn toàn miễn phí trong thời gian sớm nhất.</p>
             <div>
-                <a href="#dang-ky" class="inline-flex items-center space-x-2 bg-amber-400 hover:bg-amber-300 text-slate-900 font-extrabold px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl text-sm sm:text-base shadow-xl transition transform hover:-translate-y-1">
-                    <i class="fa-solid fa-rocket"></i>
+                <a href="#dang-ky" class="inline-flex items-center space-x-2.5 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black px-8 py-4 rounded-2xl text-sm sm:text-base shadow-2xl transition transform hover:-translate-y-1">
+                    <i class="fa-solid fa-rocket text-base"></i>
                     <span>ĐĂNG KÝ TƯ VẤN MIỄN PHÍ</span>
                 </a>
             </div>
@@ -464,34 +496,34 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-10 sm:py-14 border-t border-slate-800 text-xs sm:text-sm">
+    <footer class="bg-vnpayDark text-slate-400 py-12 sm:py-16 border-t border-slate-800 text-xs sm:text-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 pb-8 border-b border-slate-800">
-                <div class="space-y-3">
-                    <div class="flex items-center space-x-2">
-                        <img src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/VNNG.png" alt="Logo VNNG" class="h-8 w-auto rounded">
-                        <span class="text-white font-bold tracking-wider text-base">VNNG SOLUTIONS</span>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 pb-10 border-b border-slate-800">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/VNNG.png" alt="Logo VNNG" class="h-9 w-auto rounded">
+                        <span class="text-white font-black tracking-wider text-base">VNNG SOLUTIONS</span>
                     </div>
                     <p class="text-slate-400 leading-relaxed text-xs">
                         Đơn vị chuyên tư vấn và triển khai giải pháp thanh toán số toàn diện dành cho Doanh nghiệp, Chuỗi cửa hàng và Hộ kinh doanh trên toàn quốc.
                     </p>
                 </div>
 
-                <div class="space-y-2">
-                    <h3 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Thông Tin Liên Hệ</h3>
-                    <p><i class="fa-solid fa-building text-vnpayBlue mr-2"></i> <strong>Đơn vị:</strong> VNNG Solutions</p>
-                    <p><i class="fa-solid fa-location-dot text-vnpayBlue mr-2"></i> <strong>Địa chỉ:</strong> Tòa nhà Hateco Laroma, Số 4A Huỳnh Thúc Kháng, Phường Láng, TP. Hà Nội, Việt Nam</p>
-                    <p><i class="fa-solid fa-phone text-vnpayBlue mr-2"></i> <strong>Hotline/Zalo:</strong> <a href="tel:0968122893" class="text-white hover:underline font-semibold">0968 122 893</a></p>
-                    <p><i class="fa-solid fa-envelope text-vnpayBlue mr-2"></i> <strong>Email:</strong> datnt21@vnpay.vn</p>
+                <div class="space-y-3">
+                    <h3 class="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">Thông Tin Liên Hệ</h3>
+                    <p class="flex items-start space-x-2"><i class="fa-solid fa-building text-vnpayBlue mt-1"></i> <span><strong>Đơn vị:</strong> VNNG Solutions</span></p>
+                    <p class="flex items-start space-x-2"><i class="fa-solid fa-location-dot text-vnpayBlue mt-1"></i> <span><strong>Địa chỉ:</strong> Tòa nhà Hateco Laroma, Số 4A Huỳnh Thúc Kháng, Phường Láng, TP. Hà Nội, Việt Nam</span></p>
+                    <p class="flex items-start space-x-2"><i class="fa-solid fa-phone text-vnpayBlue mt-1"></i> <span><strong>Hotline/Zalo:</strong> <a href="tel:0968122893" class="text-white hover:text-amber-400 transition font-bold">0968 122 893</a></span></p>
+                    <p class="flex items-start space-x-2"><i class="fa-solid fa-envelope text-vnpayBlue mt-1"></i> <span><strong>Email:</strong> datnt21@vnpay.vn</span></p>
                 </div>
 
-                <div class="space-y-2">
-                    <h3 class="text-white font-bold uppercase tracking-wider text-xs mb-3">Chính Sách &amp; Quy Định</h3>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="https://vnngsolutions.github.io/ve-chung-toi.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition underline">Về chúng tôi</a></li>
-                        <li><a href="https://vnngsolutions.github.io/dieu-kien-va-dieu-khoan-su-dung-dich-vu.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition underline">Điều kiện và điều khoản sử dụng dịch vụ</a></li>
-                        <li><a href="https://vnngsolutions.github.io/chinh-sach-bao-ve-du-lieu-ca-nhan.htm" target="_blank" rel="noopener noreferrer" class="hover:text-white transition underline">Chính sách bảo vệ dữ liệu cá nhân</a></li>
-                        <li><a href="https://vnngsolutions.github.io/chinh-sach-bao-mat-thong-tin-thanh-toan.htm" target="_blank" rel="noopener noreferrer" class="hover:text-white transition underline">Chính sách bảo mật thông tin thanh toán cho khách hàng</a></li>
+                <div class="space-y-3">
+                    <h3 class="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">Chính Sách & Quy Định</h3>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="https://vnngsolutions.github.io/ve-chung-toi.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Về chúng tôi</a></li>
+                        <li><a href="https://vnngsolutions.github.io/dieu-kien-va-dieu-khoan-su-dung-dich-vu.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Điều kiện và điều khoản sử dụng dịch vụ</a></li>
+                        <li><a href="https://vnngsolutions.github.io/chinh-sach-bao-ve-du-lieu-ca-nhan.htm" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Chính sách bảo vệ dữ liệu cá nhân</a></li>
+                        <li><a href="https://vnngsolutions.github.io/chinh-sach-bao-mat-thong-tin-thanh-toan.htm" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Chính sách bảo mật thông tin thanh toán cho khách hàng</a></li>
                     </ul>
                 </div>
             </div>
@@ -507,8 +539,8 @@
     <div class="hidden sm:flex fixed bottom-6 right-6 z-50 flex-col space-y-3">
         <a href="https://zalo.me/0968122893" target="_blank" title="Chat Zalo Tư Vấn" class="relative group flex items-center bg-blue-600 text-white p-3.5 rounded-full shadow-2xl hover:bg-blue-700 transition transform hover:scale-110">
             <span class="absolute -top-1 -right-1 flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
             <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-xs px-0 group-hover:px-2">
                 Chat Zalo Nhanh
@@ -516,18 +548,18 @@
             <i class="fa-solid fa-comment-dots text-xl"></i>
         </a>
 
-        <a href="tel:0968122893" title="Gọi ngay Hotline" class="flex items-center bg-green-600 text-white p-3.5 rounded-full shadow-2xl hover:bg-green-700 transition transform hover:scale-110">
+        <a href="tel:0968122893" title="Gọi ngay Hotline" class="flex items-center bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl hover:bg-emerald-700 transition transform hover:scale-110">
             <i class="fa-solid fa-phone-volume text-xl"></i>
         </a>
     </div>
 
     <!-- Mobile Sticky Bottom Bar -->
-    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 p-2 grid grid-cols-2 gap-2 shadow-2xl">
-        <a href="tel:0968122893" class="bg-green-600 active:bg-green-700 text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center space-x-1.5">
+    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-50 p-2.5 grid grid-cols-2 gap-2 shadow-2xl">
+        <a href="tel:0968122893" class="bg-emerald-600 active:bg-emerald-700 text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center space-x-1.5 shadow">
             <i class="fa-solid fa-phone"></i>
             <span>GỌI 0968.122.893</span>
         </a>
-        <a href="#dang-ky" class="bg-vnpayBlue active:bg-blue-700 text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center space-x-1.5">
+        <a href="#dang-ky" class="bg-vnpayBlue active:bg-vnpayBlueHover text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center space-x-1.5 shadow">
             <i class="fa-solid fa-pen-to-square"></i>
             <span>ĐĂNG KÝ NGAY</span>
         </a>
@@ -543,7 +575,7 @@
             document.getElementById('displayName').innerText = name;
             document.getElementById('displayPhone').innerText = phone;
             
-            // 1. Đẩy sự kiện Chuyển đổi lên Google Tag Manager (nếu dùng GTM)
+            // 1. Đẩy sự kiện Chuyển đổi lên Google Tag Manager
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
                 'event': 'generate_lead',
@@ -551,7 +583,7 @@
                 'event_label': 'VNPAY Consultation Form'
             });
 
-            // 2. Bắn sự kiện chuyển đổi chính xác về Google Ads (đầy đủ nhãn & giá trị)
+            // 2. Gửi sự kiện chuyển đổi chính xác về Google Ads
             if (typeof gtag === 'function') {
                 gtag('event', 'conversion', {
                     'send_to': 'AW-18377569352/zvdGCKjB398cEMjojbtE',
