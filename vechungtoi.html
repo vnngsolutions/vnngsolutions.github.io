@@ -1,514 +1,667 @@
 <!DOCTYPE html>
 <html lang="vi" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Về Chúng Tôi - VNNG Solutions (VNNG Solution., JSC)</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandGreen: '#00A859',
-                        brandGreenDark: '#008746',
-                        brandNavy: '#0F2C4A',
-                        brandBlue: '#0055A5',
-                        brandBg: '#F4F7F6'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- FontAwesome Icons & Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .glass-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Về VNNG Solutions – đội ngũ triển khai, vận hành và mở rộng thị trường trên toàn quốc.">
+  <meta name="theme-color" content="#071a34">
+  <title>Về chúng tôi | VNNG Solutions</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root{
+      --navy:#071a34;
+      --navy-2:#0b2547;
+      --blue:#1264d6;
+      --blue-2:#2f80ed;
+      --green:#00a859;
+      --green-dark:#008b4a;
+      --red:#ef233c;
+      --ink:#102033;
+      --muted:#607086;
+      --line:#e4eaf1;
+      --soft:#f5f8fb;
+      --white:#fff;
+      --shadow:0 18px 55px rgba(7,26,52,.10);
+      --shadow-lg:0 28px 80px rgba(7,26,52,.18);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:#fff;
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,select{font:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .section{padding:92px 0}
+    .section-sm{padding:70px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:7px 12px;border:1px solid rgba(0,168,89,.18);
+      border-radius:999px;background:#effbf5;color:var(--green-dark);
+      font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    }
+    .section-head{max-width:760px;margin:0 auto 44px;text-align:center}
+    .section-head h2{margin:12px 0 12px;font-size:clamp(28px,4vw,46px);line-height:1.1;letter-spacing:-.035em}
+    .section-head p{margin:0;color:var(--muted);font-size:15px}
+    .accent{color:var(--green)}
+    .gradient-text{
+      background:linear-gradient(90deg,#00a859,#1f78e5);
+      -webkit-background-clip:text;background-clip:text;color:transparent
+    }
+
+    /* Header – visually aligned with homepage */
+    .site-header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(228,234,241,.9);
+      transition:box-shadow .25s ease;
+    }
+    .site-header.scrolled{box-shadow:0 10px 30px rgba(7,26,52,.08)}
+    .nav{
+      min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px
+    }
+    .brand{display:flex;align-items:center;gap:11px;min-width:0}
+    .brand-logo{width:48px;height:48px;object-fit:contain;flex:none}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.05}
+    .brand-name{font-size:16px;font-weight:900;letter-spacing:.045em;color:#071a34}
+    .brand-tag{font-size:9px;font-weight:700;color:#738196;letter-spacing:.11em;text-transform:uppercase;margin-top:5px}
+    .desktop-nav{display:flex;align-items:center;gap:26px;font-size:13px;font-weight:700;color:#5c6b7e}
+    .desktop-nav a{position:relative;padding:28px 0}
+    .desktop-nav a::after{
+      content:"";position:absolute;left:0;right:100%;bottom:20px;height:2px;
+      background:var(--green);transition:right .2s ease
+    }
+    .desktop-nav a:hover{color:var(--green)}
+    .desktop-nav a:hover::after{right:0}
+    .nav-cta{
+      display:inline-flex;align-items:center;gap:8px;padding:12px 17px;
+      background:var(--green);color:#fff;border-radius:12px;font-size:12px;font-weight:800;
+      box-shadow:0 10px 22px rgba(0,168,89,.20);white-space:nowrap
+    }
+    .nav-cta:hover{background:var(--green-dark);transform:translateY(-1px)}
+    .menu-btn{display:none;border:0;background:#eef4f8;color:var(--navy);width:44px;height:44px;border-radius:12px;cursor:pointer}
+    .mobile-menu{display:none;border-top:1px solid var(--line);background:#fff}
+    .mobile-menu.open{display:block}
+    .mobile-menu a{display:block;padding:14px 20px;font-weight:700;color:#526176;border-bottom:1px solid #eef2f6}
+
+    /* Hero */
+    .hero{
+      position:relative;overflow:hidden;color:#fff;
+      background:
+        radial-gradient(circle at 84% 22%,rgba(18,100,214,.34),transparent 30%),
+        radial-gradient(circle at 16% 84%,rgba(0,168,89,.18),transparent 30%),
+        linear-gradient(135deg,#06172e 0%,#0a2241 54%,#071a34 100%);
+      padding:88px 0 76px;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;opacity:.28;pointer-events:none;
+      background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+      background-size:42px 42px;
+      mask-image:linear-gradient(to bottom,black,transparent 85%);
+    }
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:62px;align-items:center}
+    .hero-copy{max-width:700px}
+    .hero-kicker{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+    .hero-kicker span{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:11px;font-weight:800;letter-spacing:.08em}
+    .hero h1{font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-.045em;margin:0 0 22px}
+    .hero-lead{font-size:16px;line-height:1.8;color:#c5d2e2;max-width:680px;margin:0 0 28px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:13px;padding:13px 18px;font-size:13px;font-weight:800;border:1px solid transparent;transition:.2s ease}
+    .btn-primary{background:var(--green);color:#fff;box-shadow:0 14px 30px rgba(0,168,89,.25)}
+    .btn-primary:hover{background:#00bd66;transform:translateY(-2px)}
+    .btn-ghost{color:#fff;border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
+    .btn-ghost:hover{background:rgba(255,255,255,.10)}
+    .hero-note{display:flex;flex-wrap:wrap;gap:16px;color:#9fb0c5;font-size:11px;font-weight:600}
+    .hero-note span{display:flex;align-items:center;gap:7px}
+    .hero-note i{color:#39d98a}
+    .hero-visual{position:relative;min-height:440px;display:grid;place-items:center}
+    .hero-glow{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(32,122,255,.27),transparent 67%);filter:blur(4px)}
+    .hero-logo{
+      position:relative;width:min(390px,78vw);filter:drop-shadow(0 28px 45px rgba(0,0,0,.35));
+      animation:float 5s ease-in-out infinite
+    }
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+    .hero-card{
+      position:absolute;left:0;bottom:8px;width:245px;padding:18px;border:1px solid rgba(255,255,255,.13);
+      border-radius:18px;background:rgba(255,255,255,.08);backdrop-filter:blur(16px);box-shadow:0 20px 45px rgba(0,0,0,.18)
+    }
+    .hero-card strong{display:block;font-size:25px;line-height:1.1}
+    .hero-card span{display:block;color:#b8c7d9;font-size:11px;margin-top:5px}
+    .hero-card.right{left:auto;right:0;top:36px;bottom:auto;width:220px}
+    .hero-card.right strong{font-size:20px}
+
+    /* Metrics */
+    .metrics{background:#fff;border-bottom:1px solid var(--line)}
+    .metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transform:translateY(-28px);margin-bottom:-28px}
+    .metric{background:#fff;padding:24px 20px;text-align:center}
+    .metric strong{display:block;font-size:27px;line-height:1;color:var(--navy);letter-spacing:-.04em}
+    .metric:nth-child(2) strong,.metric:nth-child(4) strong{color:var(--green)}
+    .metric span{display:block;margin-top:7px;color:#6b798b;font-size:11px;font-weight:700}
+
+    /* Content cards */
+    .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .panel.pad{padding:30px}
+    .panel h3{margin:0 0 10px;font-size:20px;line-height:1.25}
+    .panel p{margin:0;color:var(--muted);font-size:13px}
+    .ecosystem{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+    .eco-item{padding:14px;border:1px solid var(--line);border-radius:15px;background:var(--soft)}
+    .eco-item i{color:var(--green);font-size:14px}
+    .eco-item strong{display:block;font-size:12px;margin:7px 0 3px}
+    .eco-item span{display:block;color:#708095;font-size:11px}
+    .network{background:linear-gradient(145deg,#081c37,#0b2a51);color:#fff;padding:30px;border-radius:var(--radius);box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+    .network::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;right:-100px;top:-120px;background:rgba(18,100,214,.25)}
+    .network > *{position:relative;z-index:1}
+    .network h3{font-size:20px;margin:0 0 22px}
+    .network-item{padding:16px 0;border-top:1px solid rgba(255,255,255,.10)}
+    .network-item:first-of-type{border-top:0}
+    .network-item strong{display:block;font-size:27px;color:#4ee89a;letter-spacing:-.04em}
+    .network-item:nth-of-type(2) strong{color:#fff}
+    .network-item span{display:block;color:#aebed1;font-size:11px;margin-top:3px}
+
+    /* Achievements */
+    .soft-section{background:var(--soft)}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:16px}
+    .stat-card{padding:25px;border-radius:18px;background:linear-gradient(145deg,#081c37,#0c2b52);color:#fff;position:relative;overflow:hidden}
+    .stat-card::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-50px;bottom:-60px;background:rgba(0,168,89,.15)}
+    .stat-card strong{position:relative;z-index:1;display:block;font-size:32px;letter-spacing:-.045em;color:#52e99d}
+    .stat-card:nth-child(3) strong{color:#ffd166;font-size:28px}
+    .stat-card span{position:relative;z-index:1;display:block;margin-top:5px;color:#b6c5d7;font-size:11px}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .mini{padding:22px;border:1px solid var(--line);background:#fff;border-radius:17px}
+    .mini strong{display:block;font-size:23px;color:var(--green);letter-spacing:-.035em}
+    .mini span{display:block;color:#69788b;font-size:11px;margin-top:4px}
+
+    /* Partners */
+    .partner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .partner{padding:22px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 10px 25px rgba(7,26,52,.05)}
+    .partner .icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#edf8f2;color:var(--green);margin-bottom:14px}
+    .partner h3{font-size:14px;margin:0 0 7px}
+    .partner p{font-size:11px;color:#6c7a8d;margin:0}
+    .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .impact{padding:20px;border-radius:17px;background:#081c37;color:#fff;text-align:center}
+    .impact small{display:block;color:#aebed1;font-weight:800;font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+    .impact strong{display:block;color:#4ee89a;font-size:26px;margin:5px 0}
+    .impact span{display:block;color:#aebed1;font-size:10px}
+
+    /* Vision */
+    .vision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .vision-card{padding:28px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 12px 35px rgba(7,26,52,.05);transition:.2s}
+    .vision-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .vision-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:var(--navy);color:#fff;margin-bottom:18px}
+    .vision-card:nth-child(2) .vision-icon{background:var(--green)}
+    .vision-card h3{font-size:16px;margin:0 0 8px}
+    .vision-card p{font-size:12px;color:var(--muted);margin:0}
+    .values{margin-top:18px;background:linear-gradient(145deg,#06172e,#0b284d);color:#fff;padding:34px;border-radius:24px;box-shadow:var(--shadow-lg)}
+    .values-head{text-align:center;max-width:650px;margin:0 auto 28px}
+    .values-head h3{margin:0;font-size:23px}
+    .values-head p{color:#aebed1;font-size:11px;margin:6px 0 0}
+    .values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .value{padding:18px;border-radius:16px;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.10)}
+    .value i{color:#4ee89a}
+    .value h4{margin:10px 0 3px;font-size:12px}
+    .value p{margin:0;color:#9eafc4;font-size:10px}
+
+    /* Timeline */
+    .timeline-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+    .milestone{background:#fff;border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:0 8px 22px rgba(7,26,52,.04)}
+    .year{display:inline-flex;padding:5px 8px;border-radius:7px;background:#ecfaf3;color:var(--green-dark);font-size:10px;font-weight:900}
+    .milestone:nth-child(even) .year{background:#eef3f8;color:var(--navy)}
+    .milestone p{margin:11px 0 0;color:#657489;font-size:10.5px;line-height:1.65}
+    .roadmap{margin-top:18px;padding:30px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}
+    .roadmap h3{text-align:center;margin:0 0 26px;font-size:19px}
+    .roadmap-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+    .step{padding-left:14px;border-left:4px solid var(--navy)}
+    .step:nth-child(even){border-color:var(--green)}
+    .step strong{display:block;font-size:10px;color:var(--navy)}
+    .step:nth-child(even) strong{color:var(--green-dark)}
+    .step b{display:block;font-size:11px;margin:4px 0}
+    .step span{display:block;color:#758398;font-size:10px;line-height:1.5}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,#06172e,#0a2444 60%,#071a34);color:#fff;position:relative;overflow:hidden}
+    .cta-section::before{content:"";position:absolute;inset:auto -120px -180px auto;width:500px;height:500px;border-radius:50%;background:rgba(18,100,214,.18)}
+    .cta-box{position:relative;z-index:1;background:#fff;color:var(--ink);border-radius:26px;padding:42px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:center}
+    .cta-copy h2{font-size:clamp(28px,3.6vw,43px);line-height:1.08;letter-spacing:-.04em;margin:10px 0 12px}
+    .cta-copy p{color:var(--muted);font-size:13px;margin:0 0 18px}
+    .check-list{list-style:none;padding:0;margin:0;display:grid;gap:9px}
+    .check-list li{font-size:11px;color:#5e6e82;display:flex;gap:8px}
+    .check-list i{color:var(--green);margin-top:3px}
+    .form{display:grid;gap:13px}
+    .field label{display:block;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#59697d;margin-bottom:6px}
+    .field input,.field select,.field textarea{
+      width:100%;border:1px solid #dfe6ee;background:#f8fafc;border-radius:12px;padding:12px 13px;outline:none;font-size:12px;color:#17263a;transition:.2s
+    }
+    .field textarea{min-height:88px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{border-color:#56c995;box-shadow:0 0 0 3px rgba(0,168,89,.10);background:#fff}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form button{border:0;cursor:pointer}
+    .form-message{display:none;padding:11px 13px;border-radius:11px;background:#edf9f3;color:#087944;font-size:11px;font-weight:700}
+    .form-message.show{display:block}
+
+    /* Footer */
+    footer{background:#051326;color:#91a1b5;padding:58px 0 92px}
+    .footer-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:40px;padding-bottom:35px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .footer-brand{display:flex;align-items:center;gap:11px;margin-bottom:15px}
+    .footer-logo{width:50px;height:50px;object-fit:contain}
+    .footer-brand strong{color:#fff;font-size:15px;letter-spacing:.05em}
+    .footer-copy{font-size:11px;line-height:1.7;max-width:390px}
+    footer h3{color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.1em;margin:0 0 13px}
+    .footer-list{list-style:none;margin:0;padding:0;display:grid;gap:9px;font-size:11px}
+    .footer-list li{display:flex;gap:8px;align-items:flex-start}
+    .footer-list i{color:#2f80ed;margin-top:3px}
+    .footer-list a:hover{color:#fff}
+    .footer-bottom{text-align:center;font-size:10px;color:#63748a;padding-top:24px;display:grid;gap:6px}
+
+    /* Floating actions */
+    .floating{position:fixed;right:20px;bottom:20px;z-index:80;display:grid;gap:10px}
+    .float-btn{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 12px 28px rgba(0,0,0,.20);font-size:18px;transition:.2s}
+    .float-btn:hover{transform:scale(1.08)}
+    .float-zalo{background:#087be9}
+    .float-call{background:var(--green)}
+    .mobile-bar{display:none}
+
+    @media (max-width:1020px){
+      .desktop-nav,.nav-cta{display:none}.menu-btn{display:block}
+      .hero-grid,.story-grid,.cta-box{grid-template-columns:1fr}
+      .hero-visual{min-height:380px}
+      .hero-card{left:4%;bottom:0}.hero-card.right{right:4%;top:0}
+      .partner-grid{grid-template-columns:repeat(2,1fr)}
+      .timeline-grid,.roadmap-grid{grid-template-columns:repeat(3,1fr)}
+      .values-grid{grid-template-columns:repeat(3,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:720px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .section{padding:68px 0}.section-sm{padding:54px 0}
+      .nav{min-height:68px}.brand-logo{width:42px;height:42px}.brand-name{font-size:14px}.brand-tag{font-size:8px}
+      .hero{padding:65px 0 55px}.hero h1{font-size:38px}.hero-lead{font-size:14px}
+      .hero-visual{min-height:330px}.hero-logo{width:285px}.hero-card{width:190px;padding:13px}.hero-card.right{width:170px}.hero-card strong{font-size:19px}.hero-card.right strong{font-size:16px}
+      .metric-grid{grid-template-columns:repeat(2,1fr);transform:translateY(-20px);margin-bottom:-20px}.metric{padding:19px 12px}.metric strong{font-size:23px}
+      .ecosystem,.stats-grid,.mini-stats,.vision-grid,.impact-grid,.form-row{grid-template-columns:1fr}
+      .partner-grid{grid-template-columns:1fr 1fr}
+      .timeline-grid,.roadmap-grid{grid-template-columns:1fr}
+      .values-grid{grid-template-columns:1fr 1fr}
+      .cta-box{padding:25px;gap:28px}.footer-grid{grid-template-columns:1fr;gap:28px}
+      .floating{display:none}.mobile-bar{display:grid;position:fixed;left:0;right:0;bottom:0;z-index:90;grid-template-columns:1fr 1fr;gap:8px;padding:8px;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(7,26,52,.10)}
+      .mobile-bar a{display:flex;justify-content:center;align-items:center;gap:7px;padding:11px 8px;border-radius:11px;color:#fff;font-size:10px;font-weight:900}
+      .mobile-bar .call{background:var(--green)}.mobile-bar .consult{background:var(--blue)}
+      body{padding-bottom:64px}
+    }
+    @media (max-width:440px){
+      .brand-copy .brand-tag{display:none}.partner-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}
+      .hero-card{position:absolute;left:0;bottom:0}.hero-card.right{right:0;top:0}
+      .hero-logo{width:250px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    }
+  </style>
 </head>
-<body class="bg-brandBg text-slate-800 antialiased selection:bg-brandGreen selection:text-white">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 glass-header border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3.5">
-            <a href="#" class="flex items-center space-x-3 group min-w-0">
-                <img alt="Logo VNNG Solutions" src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/logo.png" class="h-9 sm:h-11 w-auto object-contain flex-shrink-0 transition-transform group-hover:scale-105">
-                <div class="flex flex-col min-w-0">
-                    <span class="font-black text-sm sm:text-lg text-slate-900 tracking-tight leading-none">VNNG SOLUTIONS</span>
-                    <span class="text-[10px] sm:text-xs text-slate-500 font-bold tracking-wider uppercase mt-1">Chạm kết nối mọi giá trị</span>
-                </div>
-            </a>
-            
-            <nav class="hidden md:flex space-x-6 text-sm font-semibold text-slate-600">
-                <a href="#tong-quan" class="hover:text-brandGreen transition">Tổng quan</a>
-                <a href="#thanh-tuu" class="hover:text-brandGreen transition">Thành tựu</a>
-                <a href="#tam-nhin" class="hover:text-brandGreen transition">Tầm nhìn & Giá trị</a>
-                <a href="#hanh-trinh" class="hover:text-brandGreen transition">Hành trình</a>
-            </nav>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="container nav">
+    <a class="brand" href="https://vnngsolutions.github.io/" aria-label="VNNG Solutions">
+      <img class="brand-logo" src="vnng-logo.png" alt="Logo VNNG Solutions">
+      <span class="brand-copy">
+        <span class="brand-name">VNNG SOLUTIONS</span>
+        <span class="brand-tag">Chạm kết nối mọi giá trị</span>
+      </span>
+    </a>
 
-            <a href="#hop-tac" class="bg-brandGreen hover:bg-brandGreenDark text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition transform active:scale-95 flex items-center space-x-2">
-                <span>Hợp Tác Ngay</span>
-                <i class="fa-solid fa-arrow-right text-xs"></i>
-            </a>
+    <nav class="desktop-nav" aria-label="Điều hướng chính">
+      <a href="#tong-quan">Tổng quan</a>
+      <a href="#thanh-tuu">Năng lực</a>
+      <a href="#tam-nhin">Định hướng</a>
+      <a href="#hanh-trinh">Hành trình</a>
+    </nav>
+
+    <a class="nav-cta" href="#hop-tac">Nhận tư vấn <i class="fa-solid fa-arrow-right"></i></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Mở menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#tong-quan">Tổng quan</a>
+    <a href="#thanh-tuu">Năng lực</a>
+    <a href="#tam-nhin">Định hướng</a>
+    <a href="#hanh-trinh">Hành trình</a>
+    <a href="#hop-tac">Nhận tư vấn</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="tong-quan">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker">
+          <span><i class="fa-solid fa-building"></i> Thành lập 18/05/2020</span>
+          <span><i class="fa-solid fa-location-dot"></i> Triển khai toàn quốc</span>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="tong-quan" class="relative bg-gradient-to-br from-brandNavy via-slate-900 to-brandNavy text-white py-16 lg:py-24 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="inline-flex items-center space-x-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-3.5 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest">
-                        <i class="fa-solid fa-building"></i>
-                        <span>Thành lập 18/05/2020</span>
-                    </span>
-
-                    <h1 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight">
-                        Công ty Cổ phần Giải pháp Kinh doanh Thế hệ mới <span class="text-brandGreen">VNNG</span>
-                    </h1>
-
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                        VNNG cung cấp giải pháp triển khai toàn diện từ phát triển mạng lưới khách hàng, triển khai sản phẩm, đào tạo, vận hành đến chăm sóc sau bán, giúp đối tác rút ngắn thời gian mở rộng thị trường và nâng cao hiệu quả kinh doanh.
-                    </p>
-
-                    <!-- Ecosystem Connection Box -->
-                    <div class="bg-white/5 border border-white/10 p-5 rounded-2xl backdrop-blur-md">
-                        <h4 class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-3">Mô hình trung tâm kết nối VNNG</h4>
-                        <div class="grid grid-cols-2 gap-3 text-xs text-slate-200">
-                            <div class="bg-white/5 p-2.5 rounded-lg"><strong>Đối tác công nghệ:</strong> Fintech, SaaS, IoT, Chuyển đổi số</div>
-                            <div class="bg-white/5 p-2.5 rounded-lg"><strong>Thanh toán & CĐS:</strong> Ngân hàng, VNPAY, ZaloPay</div>
-                            <div class="bg-white/5 p-2.5 rounded-lg"><strong>Thị trường đa ngành:</strong> Sản xuất, Logistics, Bán lẻ</div>
-                            <div class="bg-white/5 p-2.5 rounded-lg"><strong>Doanh nghiệp/Hộ KD:</strong> Điểm bán, Người dùng</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Strategic Network Metrics -->
-                <div class="lg:col-span-5 bg-white text-slate-900 p-6 sm:p-8 rounded-3xl shadow-2xl border border-slate-100">
-                    <h3 class="text-xl font-black text-brandNavy mb-6 flex items-center space-x-2">
-                        <i class="fa-solid fa-network-wired text-brandGreen"></i>
-                        <span>Mạng Lưới Quy Mô Toàn Quốc</span>
-                    </h3>
-
-                    <div class="space-y-4">
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <div class="text-3xl font-black text-brandGreen">04 Vùng / 09 Khu vực</div>
-                            <div class="text-xs font-semibold text-slate-600">Mạng lưới bao phủ toàn quốc</div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <div class="text-3xl font-black text-brandNavy">300+ Nhân sự</div>
-                            <div class="text-xs font-semibold text-slate-600">Đội ngũ thực chiến giàu kinh nghiệm</div>
-                        </div>
-
-                        <div class="p-4 bg-slate-50 rounded-2xl border border-slate-100">
-                            <div class="text-3xl font-black text-brandGreen">750,000+ Điểm bán</div>
-                            <div class="text-xs font-semibold text-slate-600">Điểm chấp nhận dịch vụ VNPAY từ 2020 - Nay</div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <h1>Về <span class="gradient-text">VNNG</span> Solutions</h1>
+        <p class="hero-lead">
+          VNNG cung cấp giải pháp triển khai toàn diện từ phát triển mạng lưới khách hàng,
+          triển khai sản phẩm, đào tạo, vận hành đến chăm sóc sau bán — giúp đối tác rút ngắn
+          thời gian mở rộng thị trường và nâng cao hiệu quả kinh doanh.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hop-tac">Trao đổi nhu cầu <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn btn-ghost" href="#thanh-tuu">Xem năng lực <i class="fa-solid fa-chart-line"></i></a>
         </div>
-    </section>
-
-    <!-- Social Proof & Achievements (Key Conversions Driver) -->
-    <section id="thanh-tuu" class="py-16 sm:py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
-                <span class="text-xs font-bold text-brandGreen uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Thành Tựu Đạt Được</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-slate-900">Năng Lực Triển Khai Thực Chiến Đã Được Chứng Minh</h2>
-                <p class="text-xs sm:text-sm text-slate-500">Đơn vị chủ lực giúp VNPAY phủ sóng toàn miền Bắc 2 năm đầu và mở rộng toàn quốc từ 2023.</p>
-            </div>
-
-            <!-- Big Stats Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-brandNavy text-white p-6 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
-                    <div class="text-3xl sm:text-4xl font-black text-emerald-400">750,000+</div>
-                    <div class="text-xs sm:text-sm font-medium text-slate-300 mt-2">Điểm chấp nhận dịch vụ thanh toán điện tử</div>
-                </div>
-
-                <div class="bg-brandNavy text-white p-6 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
-                    <div class="text-3xl sm:text-4xl font-black text-emerald-400">15,000+</div>
-                    <div class="text-xs sm:text-sm font-medium text-slate-300 mt-2">Điểm chấp nhận chăm sóc chuyên sâu</div>
-                </div>
-
-                <div class="bg-brandNavy text-white p-6 sm:p-8 rounded-3xl shadow-lg relative overflow-hidden">
-                    <div class="text-3xl sm:text-4xl font-black text-amber-400">2,000 Tỷ VNĐ</div>
-                    <div class="text-xs sm:text-sm font-medium text-slate-300 mt-2">Doanh thu bình quân/tháng tệp Merchant chăm sóc</div>
-                </div>
-            </div>
-
-            <!-- CĐS Drivers Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-slate-50 border border-slate-200/80 p-6 rounded-2xl">
-                    <div class="text-2xl font-black text-brandGreen">7,000+</div>
-                    <div class="text-xs font-medium text-slate-600 mt-1">Doanh nghiệp được triển khai phần mềm</div>
-                </div>
-
-                <div class="bg-slate-50 border border-slate-200/80 p-6 rounded-2xl">
-                    <div class="text-2xl font-black text-brandGreen">>300 Tỷ VNĐ</div>
-                    <div class="text-xs font-medium text-slate-600 mt-1">Doanh thu bình quân/tháng từ tệp CĐS</div>
-                </div>
-
-                <div class="bg-slate-50 border border-slate-200/80 p-6 rounded-2xl">
-                    <div class="text-2xl font-black text-brandGreen">Hàng Nghìn</div>
-                    <div class="text-xs font-medium text-slate-600 mt-1">Hợp đồng mới qua lực lượng Sales thực chiến</div>
-                </div>
-            </div>
+        <div class="hero-note">
+          <span><i class="fa-solid fa-circle-check"></i> Một đầu mối triển khai</span>
+          <span><i class="fa-solid fa-circle-check"></i> Quy trình đồng bộ</span>
+          <span><i class="fa-solid fa-circle-check"></i> Dữ liệu thực địa</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Key Clients / Partners Case Studies -->
-    <section class="py-16 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-xs font-bold text-brandNavy uppercase tracking-widest">Đối Tác Chiến Lược</span>
-                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">Khách Hàng Tiêu Biểu</h2>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                <!-- Vietcombank -->
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
-                    <div class="text-brandNavy font-extrabold text-base flex items-center space-x-2">
-                        <i class="fa-solid fa-building-columns text-brandGreen"></i>
-                        <span>Vietcombank</span>
-                    </div>
-                    <p class="text-xs text-slate-600">Triển khai QR, Mobile Banking & eKYC phục vụ hàng triệu khách hàng toàn quốc.</p>
-                </div>
-
-                <!-- ZaloPay -->
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
-                    <div class="text-brandNavy font-extrabold text-base flex items-center space-x-2">
-                        <i class="fa-solid fa-wallet text-brandGreen"></i>
-                        <span>Ví điện tử ZaloPay</span>
-                    </div>
-                    <p class="text-xs text-slate-600">Hạ tầng QR Payment Network tại hơn 200.000 điểm chấp nhận trên cả nước.</p>
-                </div>
-
-                <!-- Masan Group -->
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
-                    <div class="text-brandNavy font-extrabold text-base flex items-center space-x-2">
-                        <i class="fa-solid fa-cart-shopping text-brandGreen"></i>
-                        <span>Tập đoàn Masan</span>
-                    </div>
-                    <p class="text-xs text-slate-600">Thanh toán số toàn diện, SoftPOS & Soundbox tại hàng nghìn điểm WinMart/WinMart+.</p>
-                </div>
-
-                <!-- Agribank -->
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-2">
-                    <div class="text-brandNavy font-extrabold text-base flex items-center space-x-2">
-                        <i class="fa-solid fa-landmark text-brandGreen"></i>
-                        <span>Agribank</span>
-                    </div>
-                    <p class="text-xs text-slate-600">Mobile Banking 15 triệu+ user; eKYC, sinh trắc học, QR.</p>
-                </div>
-            </div>
-
-            <!-- Performance Impact Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-brandNavy text-white p-5 rounded-2xl text-center">
-                    <div class="text-xs font-bold uppercase text-slate-300">Thanh toán Masan</div>
-                    <div class="text-2xl font-black text-emerald-400 my-1">+200%</div>
-                    <div class="text-[11px] text-slate-300">Giao dịch năm đầu (50.000+ điểm QR)</div>
-                </div>
-
-                <div class="bg-brandNavy text-white p-5 rounded-2xl text-center">
-                    <div class="text-xs font-bold uppercase text-slate-300">Chuyển đổi số Petrolimex</div>
-                    <div class="text-2xl font-black text-emerald-400 my-1">1 triệu+</div>
-                    <div class="text-[11px] text-slate-300">Giao dịch/ngày (Hóa đơn ĐT & Thanh toán 5.500 cửa hàng)</div>
-                </div>
-
-                <div class="bg-brandNavy text-white p-5 rounded-2xl text-center">
-                    <div class="text-xs font-bold uppercase text-slate-300">Tối ưu thanh toán bán lẻ</div>
-                    <div class="text-2xl font-black text-emerald-400 my-1">-70%</div>
-                    <div class="text-[11px] text-slate-300">Thời gian thanh toán tại điểm bán</div>
-                </div>
-            </div>
+      <div class="hero-visual" aria-label="Logo VNNG Solutions">
+        <div class="hero-glow"></div>
+        <img class="hero-logo" src="vnng-logo.png" alt="VNNG Solutions">
+        <div class="hero-card">
+          <strong>300+</strong>
+          <span>Nhân sự triển khai trực tiếp</span>
         </div>
-    </section>
-
-    <!-- Vision, Mission & Core Values -->
-    <section id="tam-nhin" class="py-16 sm:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-bold text-brandGreen uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Định Hướng Chiến Lược</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Tầm Nhìn · Sứ Mệnh · Vai Trò</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:shadow-lg transition">
-                    <div class="w-12 h-12 bg-brandNavy text-white rounded-2xl flex items-center justify-center text-xl mb-6">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <h3 class="text-xl font-black text-slate-900 mb-3">TẦM NHÌN</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Trở thành hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường đa ngành, nơi mọi giải pháp công nghệ được lan tỏa thương mại hóa và tạo ra giá trị bền vững.
-                    </p>
-                </div>
-
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:shadow-lg transition">
-                    <div class="w-12 h-12 bg-brandGreen text-white rounded-2xl flex items-center justify-center text-xl mb-6">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-xl font-black text-slate-900 mb-3">SỨ MỆNH</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Kết nối các giải pháp công nghệ có giá trị thực tiễn phủ sóng thị trường; Đồng hành cùng đối tác trong hành trình mở rộng kinh doanh, gia tăng hiệu quả vận hành và xây dựng hệ sinh thái phát triển bền vững.
-                    </p>
-                </div>
-
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200/80 hover:shadow-lg transition">
-                    <div class="w-12 h-12 bg-brandNavy text-white rounded-2xl flex items-center justify-center text-xl mb-6">
-                        <i class="fa-solid fa-handshake"></i>
-                    </div>
-                    <h3 class="text-xl font-black text-slate-900 mb-3">VAI TRÒ</h3>
-                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                        Là cầu nối giữa doanh nghiệp và thị trường, cung cấp năng lực triển khai, vận hành và tối ưu liên tục, giúp sản phẩm tăng trưởng nhanh, bền vững và tạo giá trị cho mọi đối tác/khách hàng.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Core Values -->
-            <div class="bg-slate-900 text-white p-8 sm:p-12 rounded-3xl">
-                <div class="text-center max-w-xl mx-auto mb-8">
-                    <h3 class="text-xl sm:text-2xl font-black">5 Giá Trị Cốt Lõi Định Hình VNNG</h3>
-                    <p class="text-xs text-slate-400 mt-1">Nền tảng định hình cách VNNG làm việc, hợp tác và tạo giá trị bền vững.</p>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <i class="fa-solid fa-shield-halved text-emerald-400 text-lg mb-2"></i>
-                        <h4 class="font-bold text-sm">UY TÍN</h4>
-                        <p class="text-[11px] text-slate-400 mt-1">Minh bạch, trách nhiệm, nhất quán trong mọi cam kết.</p>
-                    </div>
-
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <i class="fa-solid fa-bolt text-emerald-400 text-lg mb-2"></i>
-                        <h4 class="font-bold text-sm">HIỆU QUẢ</h4>
-                        <p class="text-[11px] text-slate-400 mt-1">Hiệu quả thực chất, tối ưu quy trình tăng trưởng.</p>
-                    </div>
-
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <i class="fa-solid fa-lightbulb text-emerald-400 text-lg mb-2"></i>
-                        <h4 class="font-bold text-sm">ĐỔI MỚI</h4>
-                        <p class="text-[11px] text-slate-400 mt-1">Không ngừng học hỏi, thích ứng công nghệ mới.</p>
-                    </div>
-
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <i class="fa-solid fa-users text-emerald-400 text-lg mb-2"></i>
-                        <h4 class="font-bold text-sm">ĐỒNG HÀNH</h4>
-                        <p class="text-[11px] text-slate-400 mt-1">Dựa trên thấu hiểu, chia sẻ và hợp tác lâu dài.</p>
-                    </div>
-
-                    <div class="bg-white/5 p-4 rounded-2xl border border-white/10">
-                        <i class="fa-solid fa-seedling text-emerald-400 text-lg mb-2"></i>
-                        <h4 class="font-bold text-sm">BỀN VỮNG</h4>
-                        <p class="text-[11px] text-slate-400 mt-1">Hài hòa lợi ích, đóng góp cho cộng đồng DN Việt Nam.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-card right">
+          <strong>04 vùng / 09 khu vực</strong>
+          <span>Mạng lưới tổ chức vận hành</span>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- History Journey & Roadmap -->
-    <section id="hanh-trinh" class="py-16 sm:py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-xs font-bold text-brandGreen uppercase tracking-widest bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">Hành Trình & Tương Lai</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-2">Dấu Ấn Phát Triển & Lộ Trình</h2>
-            </div>
+  <section class="metrics" aria-label="Các chỉ số nổi bật">
+    <div class="container">
+      <div class="metric-grid">
+        <div class="metric"><strong>300+</strong><span>Nhân sự triển khai</span></div>
+        <div class="metric"><strong>34</strong><span>Tỉnh/thành trong mạng lưới</span></div>
+        <div class="metric"><strong>04 / 09</strong><span>Vùng / khu vực vận hành</span></div>
+        <div class="metric"><strong>24/7</strong><span>Hỗ trợ kỹ thuật & vận hành</span></div>
+      </div>
+    </div>
+  </section>
 
-            <!-- Historical Milestones (2020 - 2026) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-16">
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-black text-brandGreen bg-emerald-50 px-2 py-0.5 rounded">2020</span>
-                    <p class="text-xs text-slate-600 mt-2">Thành lập VNNG 18/05 (vốn 30 tỷ). Phát triển mạng lưới thanh toán số VNPAY tại Việt Nam.</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-black text-brandNavy bg-slate-100 px-2 py-0.5 rounded">2021–2022</span>
-                    <p class="text-xs text-slate-600 mt-2">Mở rộng đội ngũ thực chiến; chuẩn hóa quy trình triển khai – CSKH – đối soát khép kín.</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-black text-brandGreen bg-emerald-50 px-2 py-0.5 rounded">2023</span>
-                    <p class="text-xs text-slate-600 mt-2">Mở rộng 9 khu vực toàn quốc; phát triển CĐS cho đối tác VNPAY (phần mềm doanh nghiệp).</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-black text-brandNavy bg-slate-100 px-2 py-0.5 rounded">2024</span>
-                    <p class="text-xs text-slate-600 mt-2">Phát triển >700,000 điểm thanh toán VNPAY; triển khai phần mềm cho hàng nghìn doanh nghiệp.</p>
-                </div>
-
-                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
-                    <span class="text-xs font-black text-brandGreen bg-emerald-50 px-2 py-0.5 rounded">2025 - 2026</span>
-                    <p class="text-xs text-slate-600 mt-2">Tăng trưởng 750,000+ điểm bán; mở rộng nền tảng B2B (trạm sạc, kế toán, thuế hộ KD...).</p>
-                </div>
-            </div>
-
-            <!-- Future Roadmap (2026 - 2030+) -->
-            <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-md">
-                <h3 class="text-lg font-black text-slate-900 mb-6 text-center">Lộ Trình Tăng Trưởng (2026 – 2030+)</h3>
-                
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    <div class="border-l-4 border-brandNavy pl-4 space-y-1">
-                        <div class="text-xs font-extrabold text-brandNavy">2026 (Bước 1)</div>
-                        <div class="text-xs font-bold text-slate-800">Nâng cấp vận hành & Mở rộng đối tác</div>
-                        <p class="text-[11px] text-slate-500">Chuẩn hóa & số hóa quản lý; đẩy mạnh ký kết đối tác fintech.</p>
-                    </div>
-
-                    <div class="border-l-4 border-brandGreen pl-4 space-y-1">
-                        <div class="text-xs font-extrabold text-brandGreen">2027 (Bước 2)</div>
-                        <div class="text-xs font-bold text-slate-800">Nhân rộng ngành nghề triển khai</div>
-                        <p class="text-[11px] text-slate-500">Đưa mô hình sang tài chính, viễn thông, bán lẻ...</p>
-                    </div>
-
-                    <div class="border-l-4 border-brandNavy pl-4 space-y-1">
-                        <div class="text-xs font-extrabold text-brandNavy">2028 (Bước 3)</div>
-                        <div class="text-xs font-bold text-slate-800">Tự động hóa nền dữ liệu</div>
-                        <p class="text-[11px] text-slate-500">Tự động phân bổ, theo dõi & ứng dụng phân tích dữ liệu.</p>
-                    </div>
-
-                    <div class="border-l-4 border-brandGreen pl-4 space-y-1">
-                        <div class="text-xs font-extrabold text-brandGreen">2029 (Bước 4)</div>
-                        <div class="text-xs font-bold text-slate-800">Nền tảng Go-to-Market đa ngành</div>
-                        <p class="text-[11px] text-slate-500">Hợp nhất mạng lưới đối tác & hạ tầng vận hành thống nhất.</p>
-                    </div>
-
-                    <div class="border-l-4 border-brandNavy pl-4 space-y-1">
-                        <div class="text-xs font-extrabold text-brandNavy">2030+ (Bước 5)</div>
-                        <div class="text-xs font-bold text-slate-800">Hệ sinh thái "Chạm kết nối"</div>
-                        <p class="text-[11px] text-slate-500">Trở thành hạ tầng kết nối trung gian công nghệ & thị trường.</p>
-                    </div>
-                </div>
-            </div>
+  <section class="section">
+    <div class="container story-grid">
+      <article class="panel pad">
+        <span class="eyebrow"><i class="fa-solid fa-network-wired"></i> Mô hình kết nối</span>
+        <h3 style="margin-top:16px">Một trung tâm kết nối giữa công nghệ và thị trường</h3>
+        <p>
+          VNNG đóng vai trò cầu nối để các giải pháp có giá trị thực tiễn được triển khai,
+          thương mại hóa và vận hành tại thị trường đa ngành.
+        </p>
+        <div class="ecosystem">
+          <div class="eco-item"><i class="fa-solid fa-microchip"></i><strong>Đối tác công nghệ</strong><span>Fintech, SaaS, IoT, chuyển đổi số</span></div>
+          <div class="eco-item"><i class="fa-solid fa-wallet"></i><strong>Thanh toán & CĐS</strong><span>Ngân hàng, VNPAY, ZaloPay</span></div>
+          <div class="eco-item"><i class="fa-solid fa-store"></i><strong>Thị trường đa ngành</strong><span>Sản xuất, logistics, bán lẻ</span></div>
+          <div class="eco-item"><i class="fa-solid fa-users"></i><strong>Doanh nghiệp / Hộ KD</strong><span>Điểm bán, người dùng</span></div>
         </div>
-    </section>
+      </article>
 
-    <!-- High-Converting CTA Form Section -->
-    <section id="hop-tac" class="py-16 sm:py-24 bg-gradient-to-br from-brandNavy via-slate-900 to-brandNavy text-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-12 shadow-2xl border border-slate-100">
-                <div class="text-center max-w-xl mx-auto mb-8 space-y-2">
-                    <span class="text-xs font-black text-brandGreen uppercase tracking-widest">Tối Ưu Tăng Trưởng</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900">Sẵn Sàng Mở Rộng Thị Trường Cùng VNNG?</h2>
-                    <p class="text-slate-600 text-xs sm:text-sm">Điền thông tin bên dưới, chuyên gia của VNNG sẽ liên hệ tư vấn giải pháp triển khai tối ưu cho bạn trong vòng 24h.</p>
-                </div>
+      <aside class="network">
+        <h3><i class="fa-solid fa-signal" style="color:#4ee89a"></i> Mạng lưới quy mô toàn quốc</h3>
+        <div class="network-item"><strong>04 Vùng / 09 Khu vực</strong><span>Mạng lưới bao phủ toàn quốc</span></div>
+        <div class="network-item"><strong>300+ Nhân sự</strong><span>Đội ngũ thực chiến giàu kinh nghiệm</span></div>
+        <div class="network-item"><strong>750,000+ Điểm bán</strong><span>Điểm chấp nhận dịch vụ VNPAY từ 2020 - nay</span></div>
+      </aside>
+    </div>
+  </section>
 
-                <form class="space-y-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Họ và tên <span class="text-red-500">*</span></label>
-                            <input type="text" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Số điện thoại / Zalo <span class="text-red-500">*</span></label>
-                            <input type="tel" required placeholder="09xx xxx xxx" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen">
-                        </div>
-                    </div>
+  <section class="section soft-section" id="thanh-tuu">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Thành tựu đạt được</span>
+        <h2>Năng lực triển khai thực chiến <span class="accent">đã được chứng minh</span></h2>
+        <p>Đơn vị chủ lực giúp VNPAY phủ sóng toàn miền Bắc 2 năm đầu và mở rộng toàn quốc từ 2023.</p>
+      </div>
 
-                    <div>
-                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nhu cầu hợp tác</label>
-                        <select class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brandGreen">
-                            <option>Phát triển mạng lưới điểm bán / Merchant VNPAY</option>
-                            <option>Triển khai giải pháp Thanh toán & Chuyển đổi số</option>
-                            <option>Hợp tác phân phối giải pháp Fintech / SaaS / IoT</option>
-                            <option>Tư vấn mở rộng thị trường đa ngành (Tài chính, Bán lẻ, Logistics...)</option>
-                        </select>
-                    </div>
+      <div class="stats-grid">
+        <div class="stat-card"><strong>750,000+</strong><span>Điểm chấp nhận dịch vụ thanh toán điện tử</span></div>
+        <div class="stat-card"><strong>15,000+</strong><span>Điểm chấp nhận chăm sóc chuyên sâu</span></div>
+        <div class="stat-card"><strong>2,000 Tỷ VNĐ</strong><span>Doanh thu bình quân/tháng tệp Merchant chăm sóc</span></div>
+      </div>
+      <div class="mini-stats">
+        <div class="mini"><strong>7,000+</strong><span>Doanh nghiệp được triển khai phần mềm</span></div>
+        <div class="mini"><strong>&gt;300 Tỷ VNĐ</strong><span>Doanh thu bình quân/tháng từ tệp CĐS</span></div>
+        <div class="mini"><strong>Hàng nghìn</strong><span>Hợp đồng mới qua lực lượng Sales thực chiến</span></div>
+      </div>
+    </div>
+  </section>
 
-                    <button type="submit" class="w-full bg-brandGreen hover:bg-brandGreenDark text-white font-extrabold py-4 rounded-xl shadow-lg transition transform active:scale-95 text-sm uppercase tracking-wider flex items-center justify-center space-x-2">
-                        <span>ĐĂNG KÝ TƯ VẤN HỢP TÁC</span>
-                        <i class="fa-solid fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Đối tác chiến lược</span>
+        <h2>Khách hàng <span class="gradient-text">tiêu biểu</span></h2>
+      </div>
+
+      <div class="partner-grid">
+        <article class="partner"><div class="icon"><i class="fa-solid fa-building-columns"></i></div><h3>Vietcombank</h3><p>Triển khai QR, Mobile Banking & eKYC phục vụ hàng triệu khách hàng toàn quốc.</p></article>
+        <article class="partner"><div class="icon"><i class="fa-solid fa-wallet"></i></div><h3>Ví điện tử ZaloPay</h3><p>Hạ tầng QR Payment Network tại hơn 200.000 điểm chấp nhận trên cả nước.</p></article>
+        <article class="partner"><div class="icon"><i class="fa-solid fa-cart-shopping"></i></div><h3>Tập đoàn Masan</h3><p>Thanh toán số toàn diện, SoftPOS & Soundbox tại hàng nghìn điểm WinMart/WinMart+.</p></article>
+        <article class="partner"><div class="icon"><i class="fa-solid fa-landmark"></i></div><h3>Agribank</h3><p>Mobile Banking 15 triệu+ user; eKYC, sinh trắc học, QR.</p></article>
+      </div>
+
+      <div class="impact-grid">
+        <div class="impact"><small>Thanh toán Masan</small><strong>+200%</strong><span>Giao dịch năm đầu (50.000+ điểm QR)</span></div>
+        <div class="impact"><small>Chuyển đổi số Petrolimex</small><strong>1 triệu+</strong><span>Giao dịch/ngày (Hóa đơn ĐT & Thanh toán 5.500 cửa hàng)</span></div>
+        <div class="impact"><small>Tối ưu thanh toán bán lẻ</small><strong>-70%</strong><span>Thời gian thanh toán tại điểm bán</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft-section" id="tam-nhin">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Định hướng chiến lược</span>
+        <h2>Tầm nhìn · Sứ mệnh · <span class="accent">Vai trò</span></h2>
+      </div>
+
+      <div class="vision-grid">
+        <article class="vision-card">
+          <div class="vision-icon"><i class="fa-solid fa-eye"></i></div>
+          <h3>TẦM NHÌN</h3>
+          <p>Trở thành hạ tầng kết nối trung gian giữa đối tác công nghệ và thị trường đa ngành, nơi mọi giải pháp công nghệ được lan tỏa thương mại hóa và tạo ra giá trị bền vững.</p>
+        </article>
+        <article class="vision-card">
+          <div class="vision-icon"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>SỨ MỆNH</h3>
+          <p>Kết nối các giải pháp công nghệ có giá trị thực tiễn phủ sóng thị trường; đồng hành cùng đối tác trong hành trình mở rộng kinh doanh, gia tăng hiệu quả vận hành và xây dựng hệ sinh thái phát triển bền vững.</p>
+        </article>
+        <article class="vision-card">
+          <div class="vision-icon"><i class="fa-solid fa-handshake"></i></div>
+          <h3>VAI TRÒ</h3>
+          <p>Là cầu nối giữa doanh nghiệp và thị trường, cung cấp năng lực triển khai, vận hành và tối ưu liên tục, giúp sản phẩm tăng trưởng nhanh, bền vững và tạo giá trị cho mọi đối tác/khách hàng.</p>
+        </article>
+      </div>
+
+      <div class="values">
+        <div class="values-head">
+          <h3>5 Giá trị cốt lõi định hình VNNG</h3>
+          <p>Nền tảng định hình cách VNNG làm việc, hợp tác và tạo giá trị bền vững.</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-vnpayDark text-slate-400 py-12 sm:py-16 border-t border-slate-800 text-xs sm:text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10 pb-10 border-b border-slate-800">
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-3">
-                        <img src="https://raw.githubusercontent.com/vnngsolutions/vnngsolutions.github.io/main/VNNG.png" alt="Logo VNNG" class="h-9 w-auto rounded">
-                        <span class="text-white font-black tracking-wider text-base">VNNG SOLUTIONS</span>
-                    </div>
-                    <p class="text-slate-400 leading-relaxed text-xs">
-                        Đơn vị chuyên tư vấn và triển khai giải pháp thanh toán số toàn diện dành cho Doanh nghiệp, Chuỗi cửa hàng và Hộ kinh doanh trên toàn quốc.
-                    </p>
-                </div>
-
-                <div class="space-y-3">
-                    <h3 class="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">Thông Tin Liên Hệ</h3>
-                    <p class="flex items-start space-x-2"><i class="fa-solid fa-building text-vnpayBlue mt-1"></i> <span><strong>Đơn vị:</strong> VNNG Solutions</span></p>
-                    <p class="flex items-start space-x-2"><i class="fa-solid fa-location-dot text-vnpayBlue mt-1"></i> <span><strong>Địa chỉ:</strong> Tòa nhà Hateco Laroma, Số 4A Huỳnh Thúc Kháng, Phường Láng, TP. Hà Nội, Việt Nam</span></p>
-                    <p class="flex items-start space-x-2"><i class="fa-solid fa-phone text-vnpayBlue mt-1"></i> <span><strong>Hotline/Zalo:</strong> <a href="tel:0968122893" class="text-white hover:text-amber-400 transition font-bold">0968 122 893</a></span></p>
-                    <p class="flex items-start space-x-2"><i class="fa-solid fa-envelope text-vnpayBlue mt-1"></i> <span><strong>Email:</strong> datnt21@vnpay.vn</span></p>
-                </div>
-
-                <div class="space-y-3">
-                    <h3 class="text-white font-bold uppercase tracking-wider text-xs border-b border-slate-800 pb-2">Chính Sách & Quy Định</h3>
-                    <ul class="space-y-2.5 text-xs">
-                        <li><a href="https://vnngsolutions.github.io/vechungtoi.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Về chúng tôi</a></li>
-                        <li><a href="https://vnngsolutions.github.io/dieu-kien-va-dieu-khoan-su-dung-dich-vu.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Điều kiện và điều khoản sử dụng dịch vụ</a></li>
-                        <li><a href="https://vnngsolutions.github.io/chinh-sach-bao-ve-du-lieu-ca-nhan.htm" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Chính sách bảo vệ dữ liệu cá nhân</a></li>
-                        <li><a href="https://vnngsolutions.github.io/chinh-sach-bao-mat-thong-tin-thanh-toan.htm" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Chính sách bảo mật thông tin thanh toán cho khách hàng</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="text-center space-y-2 text-slate-500 text-xs">
-                <p>* VNNG Solutions là đại lý đối tác độc lập hỗ trợ tư vấn và kết nối dịch vụ thanh toán VNPAY cho các cửa hàng và doanh nghiệp.</p>
-                <p>&copy; 2026 VNNG Solutions (vnngsolutions.github.io). All rights reserved.</p>
-            </div>
+        <div class="values-grid">
+          <div class="value"><i class="fa-solid fa-shield-halved"></i><h4>UY TÍN</h4><p>Minh bạch, trách nhiệm, nhất quán trong mọi cam kết.</p></div>
+          <div class="value"><i class="fa-solid fa-bolt"></i><h4>HIỆU QUẢ</h4><p>Hiệu quả thực chất, tối ưu quy trình tăng trưởng.</p></div>
+          <div class="value"><i class="fa-solid fa-lightbulb"></i><h4>ĐỔI MỚI</h4><p>Không ngừng học hỏi, thích ứng công nghệ mới.</p></div>
+          <div class="value"><i class="fa-solid fa-users"></i><h4>ĐỒNG HÀNH</h4><p>Dựa trên thấu hiểu, chia sẻ và hợp tác lâu dài.</p></div>
+          <div class="value"><i class="fa-solid fa-seedling"></i><h4>BỀN VỮNG</h4><p>Hài hòa lợi ích, đóng góp cho cộng đồng DN Việt Nam.</p></div>
         </div>
-    </footer>
-    
-    <!-- Floating Action Buttons (PC / Tablet) -->
-    <div class="hidden sm:flex fixed bottom-6 right-6 z-50 flex-col space-y-3">
-        <a href="https://zalo.me/0968122893" target="_blank" title="Chat Zalo Tư Vấn" class="relative group flex items-center bg-blue-600 text-white p-3.5 rounded-full shadow-2xl hover:bg-blue-700 transition transform hover:scale-110">
-            <span class="absolute -top-1 -right-1 flex h-3 w-3">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-            </span>
-            <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 ease-in-out font-bold text-xs px-0 group-hover:px-2">
-                Chat Zalo Nhanh
-            </span>
-            <i class="fa-solid fa-comment-dots text-xl"></i>
-        </a>
+      </div>
+    </div>
+  </section>
 
-        <a href="tel:0968122893" title="Gọi ngay Hotline" class="flex items-center bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl hover:bg-emerald-700 transition transform hover:scale-110">
-            <i class="fa-solid fa-phone-volume text-xl"></i>
-        </a>
+  <section class="section" id="hanh-trinh">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Hành trình & tương lai</span>
+        <h2>Dấu ấn phát triển <span class="accent">& lộ trình</span></h2>
+      </div>
+
+      <div class="timeline-grid">
+        <article class="milestone"><span class="year">2020</span><p>Thành lập VNNG 18/05 (vốn 30 tỷ). Phát triển mạng lưới thanh toán số VNPAY tại Việt Nam.</p></article>
+        <article class="milestone"><span class="year">2021–2022</span><p>Mở rộng đội ngũ thực chiến; chuẩn hóa quy trình triển khai – CSKH – đối soát khép kín.</p></article>
+        <article class="milestone"><span class="year">2023</span><p>Mở rộng 9 khu vực toàn quốc; phát triển CĐS cho đối tác VNPAY (phần mềm doanh nghiệp).</p></article>
+        <article class="milestone"><span class="year">2024</span><p>Phát triển &gt;700,000 điểm thanh toán VNPAY; triển khai phần mềm cho hàng nghìn doanh nghiệp.</p></article>
+        <article class="milestone"><span class="year">2025 - 2026</span><p>Tăng trưởng 750,000+ điểm bán; mở rộng nền tảng B2B (trạm sạc, kế toán, thuế hộ KD...).</p></article>
+      </div>
+
+      <div class="roadmap">
+        <h3>Lộ trình tăng trưởng (2026 – 2030+)</h3>
+        <div class="roadmap-grid">
+          <div class="step"><strong>2026 · BƯỚC 1</strong><b>Nâng cấp vận hành & Mở rộng đối tác</b><span>Chuẩn hóa & số hóa quản lý; đẩy mạnh ký kết đối tác fintech.</span></div>
+          <div class="step"><strong>2027 · BƯỚC 2</strong><b>Nhân rộng ngành nghề triển khai</b><span>Đưa mô hình sang tài chính, viễn thông, bán lẻ...</span></div>
+          <div class="step"><strong>2028 · BƯỚC 3</strong><b>Tự động hóa nền dữ liệu</b><span>Tự động phân bổ, theo dõi & ứng dụng phân tích dữ liệu.</span></div>
+          <div class="step"><strong>2029 · BƯỚC 4</strong><b>Nền tảng Go-to-Market đa ngành</b><span>Hợp nhất mạng lưới đối tác & hạ tầng vận hành thống nhất.</span></div>
+          <div class="step"><strong>2030+ · BƯỚC 5</strong><b>Hệ sinh thái “Chạm kết nối”</b><span>Trở thành hạ tầng kết nối trung gian công nghệ & thị trường.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section" id="hop-tac">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-copy">
+          <span class="eyebrow">Tối ưu tăng trưởng</span>
+          <h2>Sẵn sàng mở rộng thị trường cùng <span class="accent">VNNG?</span></h2>
+          <p>Điền thông tin bên dưới, chuyên gia của VNNG sẽ liên hệ tư vấn giải pháp triển khai tối ưu cho bạn trong vòng 24h.</p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-check"></i><span>Tư vấn theo nhu cầu và địa bàn triển khai</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Gợi ý cấu trúc triển khai và vận hành</span></li>
+            <li><i class="fa-solid fa-check"></i><span>Không ràng buộc khi gửi yêu cầu tư vấn</span></li>
+          </ul>
+        </div>
+
+        <form class="form" id="contactForm">
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Họ và tên <span style="color:#e63946">*</span></label>
+              <input id="name" name="name" type="text" required autocomplete="name" placeholder="Nguyễn Văn A">
+            </div>
+            <div class="field">
+              <label for="phone">Số điện thoại / Zalo <span style="color:#e63946">*</span></label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="09xx xxx xxx">
+            </div>
+          </div>
+          <div class="field">
+            <label for="need">Nhu cầu hợp tác</label>
+            <select id="need" name="need">
+              <option>Phát triển mạng lưới điểm bán / Merchant VNPAY</option>
+              <option>Triển khai giải pháp Thanh toán & Chuyển đổi số</option>
+              <option>Hợp tác phân phối giải pháp Fintech / SaaS / IoT</option>
+              <option>Tư vấn mở rộng thị trường đa ngành</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Mô tả ngắn nhu cầu</label>
+            <textarea id="message" name="message" placeholder="Địa bàn, sản phẩm, quy mô hoặc mục tiêu bạn đang quan tâm..."></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">ĐĂNG KÝ TƯ VẤN HỢP TÁC <i class="fa-solid fa-paper-plane"></i></button>
+          <div class="form-message" id="formMessage" role="status">Cảm ơn bạn! Thông tin đã được ghi nhận. Nếu cần hỗ trợ ngay, vui lòng gọi 0968 122 893.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img class="footer-logo" src="vnng-logo.png" alt="Logo VNNG Solutions">
+          <strong>VNNG SOLUTIONS</strong>
+        </div>
+        <p class="footer-copy">Đơn vị tư vấn và triển khai giải pháp công nghệ, thanh toán và mở rộng thị trường cho doanh nghiệp, chuỗi cửa hàng và hộ kinh doanh.</p>
+      </div>
+
+      <div>
+        <h3>Thông tin liên hệ</h3>
+        <ul class="footer-list">
+          <li><i class="fa-solid fa-building"></i><span><b>Đơn vị:</b> VNNG Solutions</span></li>
+          <li><i class="fa-solid fa-location-dot"></i><span><b>Địa chỉ:</b> Tòa nhà Hateco Laroma, Số 4A Huỳnh Thúc Kháng, Phường Láng, TP. Hà Nội, Việt Nam</span></li>
+          <li><i class="fa-solid fa-phone"></i><span><b>Hotline/Zalo:</b> <a href="tel:0968122893">0968 122 893</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><b>Email:</b> <a href="mailto:datnt21@vnpay.vn">datnt21@vnpay.vn</a></span></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Thông tin</h3>
+        <ul class="footer-list">
+          <li><i class="fa-solid fa-chevron-right"></i><a href="https://vnngsolutions.github.io/vechungtoi.html">Về chúng tôi</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i><a href="https://vnngsolutions.github.io/dieu-kien-va-dieu-khoan-su-dung-dich-vu.html">Điều kiện & điều khoản</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i><a href="https://vnngsolutions.github.io/chinh-sach-bao-ve-du-lieu-ca-nhan.htm">Chính sách dữ liệu cá nhân</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i><a href="https://vnngsolutions.github.io/chinh-sach-bao-mat-thong-tin-thanh-toan.htm">Chính sách bảo mật</a></li>
+        </ul>
+      </div>
     </div>
 
-    <!-- Mobile Sticky Bottom Bar -->
-    <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 z-50 p-2.5 grid grid-cols-2 gap-2 shadow-2xl">
-        <a href="tel:0968122893" class="bg-emerald-600 active:bg-emerald-700 text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center space-x-1.5 shadow">
-            <i class="fa-solid fa-phone"></i>
-            <span>GỌI 0968.122.893</span>
-        </a>
-        <a href="#dang-ky" class="bg-vnpayBlue active:bg-vnpayBlueHover text-white py-2.5 rounded-xl font-bold text-xs flex items-center justify-center space-x-1.5 shadow">
-            <i class="fa-solid fa-pen-to-square"></i>
-            <span>ĐĂNG KÝ NGAY</span>
-        </a>
+    <div class="footer-bottom">
+      <div>* VNNG Solutions là đơn vị đối tác độc lập hỗ trợ tư vấn, kết nối và triển khai các giải pháp phù hợp; không phải là VNPAY.</div>
+      <div>© <span id="year"></span> VNNG Solutions. All rights reserved.</div>
     </div>
+  </div>
+</footer>
 
-    <script>
+<div class="floating" aria-label="Liên hệ nhanh">
+  <a class="float-btn float-zalo" href="https://zalo.me/0968122893" target="_blank" rel="noopener noreferrer" title="Chat Zalo"><i class="fa-solid fa-comment-dots"></i></a>
+  <a class="float-btn float-call" href="tel:0968122893" title="Gọi hotline"><i class="fa-solid fa-phone-volume"></i></a>
+</div>
+
+<div class="mobile-bar">
+  <a class="call" href="tel:0968122893"><i class="fa-solid fa-phone"></i> GỌI 0968.122.893</a>
+  <a class="consult" href="#hop-tac"><i class="fa-solid fa-pen-to-square"></i> NHẬN TƯ VẤN</a>
+</div>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 8);
+  }, {passive:true});
+
+  menuBtn.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  });
+
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+
+  document.getElementById('contactForm').addEventListener('submit', (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const message = document.getElementById('formMessage');
+    message.classList.add('show');
+    form.reset();
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
